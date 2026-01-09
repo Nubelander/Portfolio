@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. J. Peter Moore Portfolio - Simon An</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --accent: #e8d5b5;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --transition: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 213, 181, 0.1);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        .back-link::before {
+            content: '←';
+            font-size: 1.2rem;
+        }
+
+        .project-hero {
+            padding: 150px 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-hero-video {
+            width: 100%;
+            height: 600px;
+            background: var(--secondary-bg);
+            border: 1px solid rgba(232, 213, 181, 0.1);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero-video::before {
+            content: '▶';
+            font-size: 8rem;
+            opacity: 0.2;
+            position: absolute;
+        }
+
+        .project-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            letter-spacing: 0.2em;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(232, 213, 181, 0.1);
+            border-bottom: 1px solid rgba(232, 213, 181, 0.1);
+        }
+
+        .meta-item h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .project-content {
+            padding: 4rem 4rem 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 5rem;
+        }
+
+        .content-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .content-section p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .content-section li {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .content-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .image-grid.single {
+            grid-template-columns: 1fr;
+        }
+
+        .image-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--secondary-bg);
+            border: 1px solid rgba(232, 213, 181, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: all 0.3s var(--transition);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .image-placeholder:hover {
+            border-color: rgba(232, 213, 181, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .image-large {
+            min-height: 600px;
+        }
+
+        .browser-mockup {
+            background: #2a2a2a;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            border: 1px solid rgba(232, 213, 181, 0.1);
+        }
+
+        .browser-header {
+            background: #1a1a1a;
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-muted);
+        }
+
+        .browser-dot:nth-child(1) { background: #ff5f56; }
+        .browser-dot:nth-child(2) { background: #ffbd2e; }
+        .browser-dot:nth-child(3) { background: #27c93f; }
+
+        .browser-content {
+            aspect-ratio: 16/9;
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid rgba(232, 213, 181, 0.1);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            overflow-x: auto;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border: 1px solid rgba(232, 213, 181, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            padding: 1rem 1.5rem;
+            background: var(--secondary-bg);
+            border: 1px solid rgba(232, 213, 181, 0.2);
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: rgba(232, 213, 181, 0.1);
+            border: 1px solid rgba(232, 213, 181, 0.2);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 4rem 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(232, 213, 181, 0.1);
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(232, 213, 181, 0.3);
+            background: transparent;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn.prev::before {
+            content: '←';
+        }
+
+        .nav-btn.next::after {
+            content: '→';
+        }
+
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid rgba(232, 213, 181, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav, .project-hero, .project-content, .project-nav {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .project-hero-video {
+                height: 300px;
+            }
+
+            .project-title {
+                font-size: 2.5rem;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .image-grid,
+            .image-grid.two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Simon An</a>
+        <a href="all-works.html" class="back-link">Back to All Works</a>
+    </nav>
+
+    <div class="project-hero">
+        <div class="project-number">PROJECT 02</div>
+        <h1 class="project-title">Dr. J. Peter Moore Portfolio</h1>
+        
+        <div class="project-hero-video">
+            Website Demo Video / Interactive Walkthrough
+        </div>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <h4>Role</h4>
+                <p>Designer & Developer</p>
+            </div>
+            <div class="meta-item">
+                <h4>Timeline</h4>
+                <p>August 2025 – Present</p>
+            </div>
+            <div class="meta-item">
+                <h4>Client</h4>
+                <p>Dr. J. Peter Moore</p>
+            </div>
+            <div class="meta-item">
+                <h4>Status</h4>
+                <p>Live & Deployed</p>
+            </div>
+        </div>
+
+        <div class="project-tags">
+            <span class="tag">Web Design</span>
+            <span class="tag">HTML/CSS/JS</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Deployment</span>
+        </div>
+    </div>
+
+    <div class="project-content">
+        <section class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+                Dr. J. Peter Moore needed a comprehensive digital portfolio to showcase his work as an educator, 
+                letterpress artist, and small-press publisher. The challenge was to translate complex print-based 
+                content—seminar courses, letterpress projects, and limited-edition publications—into an engaging, 
+                accessible online experience that honored his unique artistic sensibility.
+            </p>
+            <p>
+                What made this project distinctive was the <strong>decision to skip traditional mockup tools 
+                entirely</strong> and design directly in code. Dr. Moore's aesthetic vision—rooted in fine 
+                typography, careful spacing, and the tactile qualities of letterpress work—required a level of 
+                refinement that Figma couldn't adequately represent. By coding the design from the start, I could 
+                iterate with real fonts, authentic browser rendering, and immediate responsive feedback.
+            </p>
+            <p>
+                I handled everything from initial concept to deployment, creating a fully custom website that 
+                reflects the craftsmanship and literary sophistication of Dr. Moore's work.
+            </p>
+
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Pages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Custom Code</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Weeks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Assets</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>The Challenge</h2>
+            <p>
+                This project presented a unique creative challenge: designing for someone whose entire career 
+                centers on visual refinement, typography, and the materiality of print. Dr. Moore isn't just 
+                a client—he's an artist with decades of experience in letterpress printing and book design, 
+                with an exceptionally discerning eye for typographic detail.
+            </p>
+            
+            <h3>Core Design Challenges</h3>
+            <ul>
+                <li><strong>Unique Artistic Vision:</strong> Dr. Moore's aesthetic is deeply personal, rooted in traditional printmaking and fine typography</li>
+                <li><strong>Typography-First Approach:</strong> Every typeface, size, weight, and spacing decision needed to honor his expertise</li>
+                <li><strong>Beyond Standard Tools:</strong> Figma prototypes couldn't capture the nuanced typographic refinement required—real fonts and browser rendering were essential</li>
+                <li><strong>Personal Portfolio Context:</strong> This wasn't a commercial site; it needed to reflect his personality and artistic sensibility</li>
+                <li><strong>Tactile to Digital:</strong> Translate the physical qualities of letterpress work into digital experience</li>
+                <li><strong>Content Complexity:</strong> Balance academic content, artistic projects, and literary publications</li>
+            </ul>
+
+            <h3>Thinking Outside the Box</h3>
+            <p>
+                <strong>I made an unconventional decision: skip Figma entirely and design directly in code.</strong> 
+                Here's why:
+            </p>
+            <ul>
+                <li>Figma's font rendering doesn't match real web typography</li>
+                <li>Browser-specific rendering and anti-aliasing matter for letterpress aesthetics</li>
+                <li>Real CSS control over letter-spacing, line-height, and optical sizing was crucial</li>
+                <li>Immediate responsive testing with actual fonts prevented compromises</li>
+                <li>Faster iteration with live code than mockup-to-code translation</li>
+            </ul>
+
+            <div class="image-grid single">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Typography Comparison: Figma Mockup vs. Live Browser Rendering
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Research & Discovery</h2>
+            
+            <h3>Understanding the Artist</h3>
+            <p>
+                Before any design work, I immersed myself in Dr. Moore's existing work, teaching philosophy, 
+                and aesthetic preferences. This research phase was critical for a personal portfolio where the 
+                design must authentically represent the individual.
+            </p>
+            
+            <ul>
+                <li><strong>Portfolio Review:</strong> Studied his letterpress projects, book designs, and published works</li>
+                <li><strong>Teaching Materials:</strong> Reviewed course syllabi, lecture notes, and student project examples</li>
+                <li><strong>Design Conversations:</strong> Multiple discussions about typography, layout preferences, and inspiration</li>
+                <li><strong>Competitive Analysis:</strong> Examined other academic/artist portfolio sites for what to avoid</li>
+                <li><strong>Content Audit:</strong> Cataloged all materials needing to be showcased</li>
+            </ul>
+
+            <div class="image-grid two-col">
+                <div class="image-placeholder">Research Notes & Interviews</div>
+                <div class="image-placeholder">Content Organization Matrix</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Vision Board</h2>
+            <p>
+                To narrow down the aesthetic direction, I created a comprehensive vision board gathering visual 
+                references that resonated with Dr. Moore's sensibility. This became our north star throughout 
+                the design process.
+            </p>
+
+            <h3>Visual Inspiration Sources</h3>
+            <ul>
+                <li><strong>Classic Book Design:</strong> Jan Tschichold, Eric Gill, and modernist book typography</li>
+                <li><strong>Letterpress Aesthetics:</strong> Deep impressions, ink textures, handset type</li>
+                <li><strong>Academic Elegance:</strong> University press websites and scholarly publications</li>
+                <li><strong>Fine Press Publishers:</strong> Arion Press, Foolscap Press, literary small presses</li>
+                <li><strong>Editorial Design:</strong> Literary magazines and journal layouts</li>
+            </ul>
+
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Complete Vision Board: Typography, Layout, Color, Imagery</div>
+            </div>
+
+            <h3>Narrowing the Direction</h3>
+            <p>
+                From the vision board, we identified key aesthetic principles:
+            </p>
+            <ul>
+                <li><strong>Serif Typography:</strong> Classical typefaces with literary associations (Garamond, Caslon)</li>
+                <li><strong>Generous Whitespace:</strong> Breathing room honoring the "margins" of fine printing</li>
+                <li><strong>Neutral Palette:</strong> Warm off-whites and deep blacks with subtle accent colors</li>
+                <li><strong>Content Hierarchy:</strong> Clear visual structure guiding readers through dense material</li>
+                <li><strong>Photography Style:</strong> Detailed, well-lit shots showcasing craftsmanship</li>
+            </ul>
+
+            <div class="image-grid">
+                <div class="image-placeholder">Typography Specimens</div>
+                <div class="image-placeholder">Color Palette Exploration</div>
+                <div class="image-placeholder">Layout Reference Grid</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Design Process: Coding as Design</h2>
+            
+            <h3>The Unconventional Approach</h3>
+            <p>
+                With the vision board established, I made a <strong>critical methodological decision</strong>: 
+                instead of creating detailed Figma mockups, I would design directly in code. This wasn't about 
+                taking shortcuts—it was about achieving the level of typographic refinement the project demanded.
+            </p>
+
+            <h3>Why Skip Figma?</h3>
+            <ul>
+                <li><strong>Font Rendering Accuracy:</strong> Web fonts render differently in browsers than in Figma; real browser testing was essential</li>
+                <li><strong>Typographic Control:</strong> CSS gave me precise control over letter-spacing, line-height, optical sizing, and font features</li>
+                <li><strong>Responsive Typography:</strong> Testing actual responsive behavior with real fonts prevented design compromises</li>
+                <li><strong>Iteration Speed:</strong> Changing a font stack or spacing value in CSS was faster than updating across multiple Figma frames</li>
+                <li><strong>Client Review:</strong> Dr. Moore could see the actual site, not an approximation</li>
+                <li><strong>Anti-Aliasing:</strong> Browser rendering and subpixel positioning matter for letterpress-quality aesthetics</li>
+            </ul>
+
+            <div class="code-block">
+/* Example: Fine-tuning typography in CSS */
+h1 {
+    font-family: 'Garamond Premier Pro', 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;  /* Optical adjustment */
+    line-height: 1.2;
+    font-feature-settings: 'liga' 1, 'kern' 1, 'onum' 1;  /* OpenType features */
+}
+            </div>
+
+            <h3>The Workflow</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Rough HTML structure and content hierarchy</li>
+                <li><strong>Step 2:</strong> Typography system with multiple typeface tests</li>
+                <li><strong>Step 3:</strong> Layout grid with CSS Grid/Flexbox</li>
+                <li><strong>Step 4:</strong> Spacing and whitespace refinement</li>
+                <li><strong>Step 5:</strong> Responsive breakpoints with live device testing</li>
+                <li><strong>Step 6:</strong> Review sessions with Dr. Moore on actual browsers</li>
+                <li><strong>Step 7:</strong> Iteration based on typographic nuance feedback</li>
+            </ul>
+
+            <div class="image-grid two-col">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Early Code Prototype - Typography Tests
+                    </div>
+                </div>
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Refined Version - Final Typography
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <h3>The Figma Dilemma</h3>
+            <p>
+                One of the most significant challenges was that Dr. Moore's unique artistic vision and 
+                aesthetic sensibility couldn't be fully captured in traditional design tools like Figma. 
+                His work embodies a particular blend of literary sophistication and handcraft precision 
+                that standard mockups couldn't represent accurately.
+            </p>
+            <p>
+                After initial attempts at prototyping, I made the strategic decision to skip the typical 
+                high-fidelity mockup phase and <strong>code directly in HTML/CSS</strong>, allowing for more 
+                fluid experimentation with typography, spacing, and the subtle details that define his work. 
+                This approach enabled real-time refinement with actual fonts, proper rendering, and authentic 
+                interactions.
+            </p>
+
+            <div class="image-grid single">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Challenge Analysis & Design Strategy Pivot
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Research & Discovery</h2>
+            
+            <h3>Client Interviews</h3>
+            <p>
+                I began by conducting in-depth conversations with Dr. Moore to understand not just the 
+                functional requirements, but the essence of his work and teaching philosophy. Key insights 
+                emerged about:
+            </p>
+            <ul>
+                <li>His approach to letterpress as both art and communication</li>
+                <li>The importance of showcasing student work alongside his own</li>
+                <li>How his publications reflect a particular literary and visual aesthetic</li>
+                <li>The tactile, sensory qualities he wanted to evoke digitally</li>
+            </ul>
+
+            <div class="image-grid two-col">
+                <div class="image-placeholder">Interview Notes & Insights</div>
+                <div class="image-placeholder">Content Audit</div>
+            </div>
+
+            <h3>Competitive Analysis</h3>
+            <p>
+                I researched portfolios of other letterpress artists, small press publishers, and academic 
+                professionals to understand conventions and identify opportunities for differentiation.
+            </p>
+            <ul>
+                <li>Most letterpress portfolios prioritized imagery over context</li>
+                <li>Academic sites often lacked personality and visual sophistication</li>
+                <li>Few effectively combined teaching, artmaking, and publishing activities</li>
+                <li>Opportunity to create something uniquely literary and visually refined</li>
+            </ul>
+
+            <div class="image-grid">
+                <div class="image-placeholder">Competitive Analysis Matrix</div>
+                <div class="image-placeholder">Feature Comparison</div>
+                <div class="image-placeholder">Design Patterns Study</div>
+            </div>
+
+            <h3>User Research</h3>
+            <p>
+                Identified three primary audience segments:
+            </p>
+            <ul>
+                <li><strong>Students:</strong> Seeking course information and examples of student work</li>
+                <li><strong>Peers & Collaborators:</strong> Interested in publications and letterpress projects</li>
+                <li><strong>Collectors & Enthusiasts:</strong> Looking for limited editions and artist statements</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Vision Board & Aesthetic Direction</h2>
+            <p>
+                Rather than jumping into wireframes, I created a visual mood board with Dr. Moore to 
+                establish the aesthetic direction. We explored:
+            </p>
+            <ul>
+                <li><strong>Typography:</strong> Classic book typography, generous margins, thoughtful hierarchy</li>
+                <li><strong>Color:</strong> Warm neutrals reminiscent of aged paper and ink</li>
+                <li><strong>Layout:</strong> Grid systems inspired by traditional book design</li>
+                <li><strong>Imagery:</strong> High-quality photographs emphasizing texture and detail</li>
+                <li><strong>Tone:</strong> Scholarly yet accessible, sophisticated but welcoming</li>
+            </ul>
+
+            <div class="image-grid">
+                <div class="image-placeholder">Typography Exploration</div>
+                <div class="image-placeholder">Color & Material Studies</div>
+                <div class="image-placeholder">Layout Inspirations</div>
+            </div>
+
+            <h3>Reference Points</h3>
+            <p>
+                We drew inspiration from multiple sources that informed the design language:
+            </p>
+            <ul>
+                <li>Classic book publishers like New Directions and City Lights</li>
+                <li>Letterpress specimens and type catalogs</li>
+                <li>Academic publications with strong visual identity</li>
+                <li>Digital portfolios that honor craft traditions</li>
+            </ul>
+
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Complete Vision Board & Mood Board</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Design Process</h2>
+            
+            <h3>Skipping Figma: Coding as Design</h3>
+            <p>
+                Given Dr. Moore's unique aesthetic vision—one that emphasized subtle typographic details, 
+                precise spacing, and the feeling of a well-crafted book—I realized that Figma mockups 
+                would be an inadequate intermediary. The nuances of web fonts, actual browser rendering, 
+                and responsive behavior needed to be felt and refined in their native environment.
+            </p>
+            <p>
+                I made the strategic decision to <strong>design directly in code</strong>, creating a 
+                live prototype that we could iterate on together. This approach allowed for:
+            </p>
+            <ul>
+                <li>Real-time typography adjustments with actual web fonts</li>
+                <li>Authentic spacing and rhythm impossible to replicate in static mockups</li>
+                <li>Immediate testing of responsive behavior across devices</li>
+                <li>Faster iteration cycles with instant client feedback</li>
+                <li>More accurate representation of the final experience</li>
+            </ul>
+
+            <div class="code-block">
+/* Example: Custom Typography System */
+:root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    
+    /* Modular scale for typography */
+    --scale-ratio: 1.333;
+    --text-base: 1.125rem;
+    --text-sm: calc(var(--text-base) / var(--scale-ratio));
+    --text-lg: calc(var(--text-base) * var(--scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--scale-ratio));
+}
+            </div>
+
+            <h3>Discovery & Research</h3>
+            <p>
+                Before coding, I conducted thorough discovery work with Dr. Moore:
+            </p>
+            <ul>
+                <li>Multiple meetings discussing his vision and aesthetic preferences</li>
+                <li>Review of his physical publications and letterpress work</li>
+                <li>Analysis of content types and organizational needs</li>
+                <li>Creation of mood boards and typographic explorations</li>
+            </ul>
+
+            <div class="image-grid two-col">
+                <div class="image-placeholder">Discovery Meeting Notes</div>
+                <div class="image-placeholder">Content Inventory</div>
+            </div>
+
+            <h3>Information Architecture</h3>
+            <p>
+                Organized content into clear sections based on audience needs:
+            </p>
+            <ul>
+                <li><strong>Home:</strong> Overview and featured projects</li>
+                <li><strong>Courses:</strong> Seminar descriptions and student work</li>
+                <li><strong>Letterpress:</strong> Project gallery with detailed views</li>
+                <li><strong>Publications:</strong> Small-press editions and collaborations</li>
+                <li><strong>About:</strong> Biography and teaching philosophy</li>
+            </ul>
+
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Site Map & Navigation Structure</div>
+            </div>
+
+            <h3>Iterative Development</h3>
+            <p>
+                The coding-first approach enabled rapid, organic iteration:
+            </p>
+            <ul>
+                <li><strong>Week 1-2:</strong> Base structure, typography system, and homepage</li>
+                <li><strong>Week 3-4:</strong> Content pages and responsive layouts</li>
+                <li><strong>Week 5-6:</strong> Gallery systems, interactions, and refinements</li>
+                <li><strong>Week 7-8:</strong> Content integration, testing, and deployment</li>
+            </ul>
+
+            <h3>Visual Design Evolution</h3>
+            <p>
+                Created a design system that honors traditional typography while feeling contemporary:
+            </p>
+            <ul>
+                <li>Serif typography for literary feel and readability</li>
+                <li>Generous whitespace to let content breathe</li>
+                <li>Warm, neutral color palette evoking paper and ink</li>
+                <li>Large, high-quality images showcasing letterpress detail</li>
+                <li>Subtle animations that feel considered, not gratuitous</li>
+            </ul>
+
+            <div class="image-grid">
+                <div class="image-placeholder">Typography Specimens</div>
+                <div class="image-placeholder">Color System</div>
+                <div class="image-placeholder">Spacing & Grid</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Technical Implementation</h2>
+            
+            <h3>Technology Stack</h3>
+            <div class="tech-stack">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">Responsive Design</div>
+                <div class="tech-item">Git Version Control</div>
+                <div class="tech-item">Web Hosting</div>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Responsive Grid System:</strong> Fluid layouts adapting to any screen size</li>
+                <li><strong>Image Optimization:</strong> Lazy loading and modern formats for performance</li>
+                <li><strong>Smooth Animations:</strong> Subtle interactions enhancing user experience</li>
+                <li><strong>Accessibility:</strong> Semantic HTML and ARIA labels for screen readers</li>
+                <li><strong>SEO Optimization:</strong> Proper meta tags and structured data</li>
+            </ul>
+
+            <div class="code-block">
+/* Example: Responsive Image Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.gallery-item {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+            </div>
+
+            <div class="image-grid two-col">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Desktop Homepage
+                    </div>
+                </div>
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                        <div class="browser-dot"></div>
+                    </div>
+                    <div class="browser-content">
+                        Mobile Homepage
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Pages</h2>
+
+            <h3>Homepage</h3>
+            <p>
+                Welcoming introduction featuring latest projects and quick navigation to main sections.
+            </p>
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Full Homepage Screenshot</div>
+            </div>
+
+            <h3>Letterpress Gallery</h3>
+            <p>
+                Showcasing detailed photography of letterpress projects with zoom functionality.
+            </p>
+            <div class="image-grid two-col">
+                <div class="image-placeholder">Gallery Grid View</div>
+                <div class="image-placeholder">Project Detail View</div>
+            </div>
+
+            <h3>Courses Section</h3>
+            <p>
+                Course descriptions, syllabi, and student work highlighting teaching approach.
+            </p>
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Courses Page Layout</div>
+            </div>
+
+            <h3>Publications</h3>
+            <p>
+                Catalog of small-press publications with descriptions, images, and acquisition information.
+            </p>
+            <div class="image-grid">
+                <div class="image-placeholder">Publications Grid</div>
+                <div class="image-placeholder">Individual Publication</div>
+                <div class="image-placeholder">Reading Samples</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Responsive Design</h2>
+            <p>
+                Ensured optimal experience across all devices with mobile-first approach:
+            </p>
+            <ul>
+                <li>Flexible grid layouts adapting to screen size</li>
+                <li>Touch-optimized navigation for mobile</li>
+                <li>Readable typography at all sizes</li>
+                <li>Optimized images for different resolutions</li>
+            </ul>
+
+            <div class="image-grid">
+                <div class="image-placeholder">Desktop View</div>
+                <div class="image-placeholder">Tablet View</div>
+                <div class="image-placeholder">Mobile View</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Results & Impact</h2>
+            
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">95</div>
+                    <div class="stat-label">Lighthouse Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">< 2s</div>
+                    <div class="stat-label">Load Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Figma Mockups</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Pages Live</div>
+                </div>
+            </div>
+
+            <h3>Project Outcomes</h3>
+            <ul>
+                <li>Successfully launched and deployed to production</li>
+                <li>Captured Dr. Moore's unique aesthetic vision authentically</li>
+                <li>Positive client feedback on design fidelity and attention to detail</li>
+                <li>Increased visibility for Dr. Moore's academic and artistic work</li>
+                <li>Easy content management for ongoing updates</li>
+                <li>Excellent performance metrics across all devices</li>
+            </ul>
+
+            <h3>Benefits of Coding-First Approach</h3>
+            <ul>
+                <li><strong>Faster Iteration:</strong> Eliminated the mockup-to-code translation phase, saving 2-3 weeks</li>
+                <li><strong>Higher Fidelity:</strong> Typography, spacing, and interactions felt authentic from day one</li>
+                <li><strong>Better Client Feedback:</strong> Stakeholder reviews on actual website behavior, not approximations</li>
+                <li><strong>Immediate Responsive Testing:</strong> Mobile behavior tested continuously, not as afterthought</li>
+                <li><strong>Design System Evolution:</strong> Code became the source of truth, naturally creating reusable components</li>
+            </ul>
+
+            <div class="image-grid single">
+                <div class="image-placeholder image-large">Performance Metrics & Analytics Dashboard</div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Key Learnings</h2>
+            <ul>
+                <li><strong>Design Tools are Means, Not Ends:</strong> Recognizing when to bypass traditional tools like Figma in favor of direct coding enabled more authentic design expression</li>
+                <li><strong>Code as Design Medium:</strong> Designing in the browser allowed for nuanced control over typography, spacing, and responsive behavior that mockups couldn't capture</li>
+                <li><strong>Client Collaboration:</strong> Working with live prototypes enabled more productive feedback sessions focused on actual experience rather than static representations</li>
+                <li><strong>Content First:</strong> Deep understanding of Dr. Moore's work and aesthetic informed every design decision</li>
+                <li><strong>Performance Matters:</strong> Image optimization crucial for image-heavy portfolio sites</li>
+                <li><strong>Responsive Reality:</strong> Testing on real devices revealed subtleties impossible to anticipate in design tools</li>
+                <li><strong>Artistic Vision Requires Flexibility:</strong> Being willing to adapt process to serve unique creative visions leads to better outcomes</li>
+                <li><strong>Typography is Everything:</strong> For literary portfolios, typographic refinement makes or breaks the experience</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="project-nav">
+        <a href="project-chekhov.html" class="nav-btn prev">
+            Previous Project
+        </a>
+        <a href="project-printbay.html" class="nav-btn next">
+            Next Project
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Simon An. Designed & Developed with purpose.</p>
+    </footer>
+</body>
+</html>
