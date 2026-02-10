@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Works - Simon An</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/works.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Simon An</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="all-works.html" class="active">Works</a></li>
+            <li><a href="full-gallery.html">Gallery</a></li>
+            <li><a href="full-about.html">About Me</a></li>
+            <li><a href="assets/PDFs/Resume..pdf" id="resume-link" target="_blank" class="resume-btn">Resume</a></li>
+        </ul>
+    </nav>
+
+ <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">All Works</h1>
+            <p class="page-subtitle">
+                A comprehensive collection of my UX design, web development, and research projects—
+                showcasing cross-cultural design thinking and technical execution.
+            </p>
+        </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ux">UX Design</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="all-projects-container">
+        <div class="projects-grid">
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="web">
+                <a href="project cards/project-moore.html"></a>
+                <div class="work-number">02</div>
+                <h3 class="project-title">Portfolio Design</h3>
+                <p class="project-meta">Web Design & Development | August 2025 – December 2025</p>
+                <p class="project-description">
+                    Designed and developed a fully hosted digital portfolio showcasing seminar courses, 
+                    letterpress projects, and small-press publications. Built responsive website from scratch 
+                    using HTML, CSS, and JavaScript with intuitive navigation for complex academic content.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Web Design</span>
+                    <span class="tag">HTML/CSS/JS</span>
+                    <span class="tag">UI Design</span>
+                    <span class="tag">Content Strategy</span>
+                    <span class="tag">Deployment</span>
+                </div>
+                 <a href="project cards\project-moore.html" class="project-btn">View Project →</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-category="ux">
+                <div class="work-number">03</div>
+                <h3 class="project-title">PrintBay Platform</h3>
+                <p class="project-meta">UX/UI Design | May 2025 – August 2025</p>
+                <p class="project-description">
+                    Sole UX/UI designer for PrintBay's website redesign. Created comprehensive user flows, 
+                    wireframes, and high-fidelity prototypes. Established design patterns and component 
+                    library for consistency, improving user engagement and conversion rates.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">UX/UI Design</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">Wireframing</span>
+                    <span class="tag">User Flows</span>
+                    <span class="tag">Design Systems</span>
+                </div>
+                <a href="project cards\project-printbay.html" class="project-btn">View Project →</a>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card" href="all-works.html" data-category="ux">
+                <div class="work-number">01</div>
+                <h3 class="project-title">Purdue OUR Redesign</h3>
+                <p class="project-meta">UX Research & Design | January 2025 – May 2025</p>
+                <p class="project-description">
+                    Led comprehensive UX redesign of the Purdue Office of Undergraduate Research website. 
+                    Developed research protocols, conducted usability testing with 20+ students, and created 
+                    high-fidelity interactive prototypes. Delivered actionable recommendations that improved 
+                    site navigation by 40%.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">UX Research</span>
+                    <span class="tag">Prototyping</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">User Testing</span>
+                    <span class="tag">Team Leadership</span>
+                </div>
+                <a href="project cards\project-moore.html" class="project-btn">View Project →</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-category="research">
+                <div class="work-number">04</div>
+                <h3 class="project-title">Chekhov's  Cultural Legacy</h3>
+                <p class="project-meta">Literary & Cultural Research | September 2025 – Present</p>
+                <p class="project-description">
+                    Conducting comparative analysis of Anton Chekhov's literary influence across Eastern and 
+                    Western literatures. Analyzing works in original Russian and Vietnamese translations to 
+                    explore cultural and historical reflections. Applied findings to understanding narrative 
+                    design in UX contexts.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Comparative Literature</span>
+                    <span class="tag">Cultural Studies</span>
+                    <span class="tag">Translation Analysis</span>
+                    <span class="tag">Documentation</span>
+                </div>
+                <a href="project cards\project-moore.html" class="project-btn">View Project →</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Simon An. Designed & Developed with purpose.</p>
+    </footer>
+
+    <script>
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter projects
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const categories = card.dataset.category.split(' ');
+                        if (categories.includes(filter)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

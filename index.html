@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon An - UX Designer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+            <a href="index.html" class="logo">Simon An</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="all-works.html">Works</a></li>
+                <li><a href="full-gallery.html">Gallery</a></li>
+                <li><a href="full-about.html">About Me</a></li>
+                  <li><a href="assets/PDFs/Resume..pdf" id="resume-link" target="_blank" class="resume-btn">Resume</a></li>
+        </nav>
+
+        <!-- Swipeable Intro Section -->
+        <div id="intro-container">
+            <div class="intro-slides">
+                <div class="intro-slide active" style="background-image: url('/mnt/user-data/uploads/1765129193313_image.png');">
+                    <div class="intro-content">
+                        <div class="intro-text">Xin chào, tôi là Simon</div>
+                        <div class="intro-translation">Hi, I'm Simon</div>
+                    </div>
+                </div>
+                
+                <div class="intro-slide" style="background-image: url('/mnt/user-data/uploads/1765129256404_image.png');">
+                    <div class="intro-content">
+                        <div class="intro-text cyrillic">Здравствуйте, я саймон</div>
+                        <div class="intro-translation">Hi, I'm Simon</div>
+                    </div>
+                </div>
+                
+                <div class="intro-slide" style="background-image: url('/mnt/user-data/uploads/1765129273683_image.png');">
+                    <div class="intro-content">
+                        <div class="intro-text">Hi, I'm Simon</div>
+                        <div class="intro-translation">Hi, I'm Simon</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide-dots">
+                <div class="dot active" data-slide="0"></div>
+                <div class="dot" data-slide="1"></div>
+                <div class="dot" data-slide="2"></div>
+            </div>
+            
+            <div class="scroll-indicator">
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">UX Designer & Researcher</h1>
+            <p class="hero-subtitle">
+                Crafting intuitive digital experiences through research, design, and cross-cultural understanding. 
+                Based in West Lafayette, studying at Purdue University.
+            </p>
+            <div class="hero-cta">
+                <a href="all-works.html" class="btn">View My Work</a>
+                <a href="full-about.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2 class="section-title">Research</h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 4rem; font-size: 1.1rem;">
+                A visual journey through cultures and perspectives—Vietnamese heritage, 
+                Russian studies, and cross-cultural narratives captured in moments.
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1765129193313_image.png" alt="Vietnamese Street Scene">
+                    <div class="gallery-overlay">
+                        <h3>Xin chào, tôi là Simon</h3>
+                        <p>Vietnamese Heritage</p>
+                        <div class="gallery-description">
+                            A glimpse into the vibrant streets of Vietnam, where tradition meets 
+                            modernity through the lens of cultural identity and linguistic exploration.
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1765129256404_image.png" alt="Architectural Interior">
+                    <div class="gallery-overlay">
+                        <h3>Здравствуйте, я саймон</h3>
+                        <p>Russian Studies</p>
+                        <div class="gallery-description">
+                            Classical architecture reflecting the depth of Russian cultural studies—
+                            exploring Chekhov's influence and the literary bridges between East and West.
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1765129273683_image.png" alt="Urban Nightscape">
+                    <div class="gallery-overlay">
+                        <h3>Xin chào, tôi là Simon</h3>
+                        <p>Cross-Cultural Perspectives</p>
+                        <div class="gallery-description">
+                            Urban landscapes illuminated by the intersection of cultures, languages, 
+                            and the universal human experience across boundaries.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="full-gallery.html" class="btn" style="display: inline-block;">View Full Gallery</a>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works">
+            <h2 class="section-title">Works</h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto 4rem; font-size: 1.1rem;">
+                Featured projects spanning UX design, web development, and cross-cultural research—
+                each crafted with intention and attention to detail.
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="work-number">01</div>
+                    <h3 class="project-title">Purdue OUR Redesign</h3>
+                    <p class="project-meta">JJ Sadler, Purdue University | January 2025 – May 2025</p>
+                    <p class="project-description">
+                        Led the prototyping process from low- to high-fidelity designs, developing comprehensive research 
+                        and testing protocols. Applied research insights to improve the Purdue OUR website, recommending 
+                        feature changes to enhance overall user experience.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">UX Research</span>
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">User Testing</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="work-number">02</div>
+                    <h3 class="project-title">Dr. J. Peter Moore Portfolio</h3>
+                    <p class="project-meta">Web Design & Development | August 2025 – Present</p>
+                    <p class="project-description">
+                        Designed and developed a comprehensive digital portfolio featuring interactive elements, 
+                        multimedia content, and seamless navigation. Created an engaging platform to showcase 
+                        academic work, letterpress projects, and literary publications.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">UI Design</span>
+                        <span class="tag">Content Strategy</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="work-number">03</div>
+                    <h3 class="project-title">PrintBay Platform</h3>
+                    <p class="project-meta">UX/UI Design | May 2025 – August 2025</p>
+                    <p class="project-description">
+                        Sole designer for PrintBay's website, creating comprehensive user flows, wireframes, 
+                        and high-fidelity prototypes. Developed an intuitive interface that streamlined the 
+                        user experience for print services.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">UX/UI Design</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Wireframing</span>
+                        <span class="tag">User Flows</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="work-number">04</div>
+                    <h3 class="project-title">Chekhov Cross-Cultural Research</h3>
+                    <p class="project-meta">Literary & Cultural Research | September 2025 – Present</p>
+                    <p class="project-description">
+                        Comparative analysis of Anton Chekhov's works across Eastern and Western literatures, 
+                        examining Russian originals and Vietnamese adaptations. Exploring narrative techniques, 
+                        cultural reflections, and the evolution of Chekhovian realism across cultures.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Comparative Literature</span>
+                        <span class="tag">Cultural Studies</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="all-works.html" class="btn" style="display: inline-block;">View All Works</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a UX Designer and researcher pursuing a dual degree in UX Design and Political Science 
+                        at Purdue University, with minors in Russian, Anthropology, and Management. My work bridges 
+                        cultural understanding with technical execution, creating digital experiences that resonate 
+                        across boundaries.
+                    </p>
+                    <p>
+                        My interdisciplinary background allows me to approach design challenges with a unique lens—combining 
+                        user research methodologies, linguistic insights, and cultural awareness to create solutions that are 
+                        both aesthetically compelling and functionally robust.
+                    </p>
+                    <p>
+                        Currently, I'm designing digital portfolios, researching literary influences across cultures, 
+                        and prototyping solutions that enhance user experience in academic and commercial settings.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Design & Prototyping</h3>
+                        <ul>
+                            <li>Figma</li>
+                            <li>Adobe XD</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe Photoshop</li>
+                            <li>CAD</li>
+                            <li>Canva</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <ul>
+                            <li>HTML/CSS</li>
+                            <li>C++</li>
+                            <li>R Programming</li>
+                            <li>VSC</li>
+                            <li>Unity</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>English (Native)</li>
+                            <li>Vietnamese</li>
+                            <li>Russian</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Research</h3>
+                        <ul>
+                            <li>User Research</li>
+                            <li>Literature Review</li>
+                            <li>Data Analysis</li>
+                            <li>Comparative Studies</li>
+                            <li>Usability Testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="full-about.html" class="btn" style="display: inline-block;">More About Me</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    I'm always interested in collaborating on innovative projects, discussing design challenges, 
+                    or exploring opportunities in UX research and design. Let's create something meaningful together.
+                </p>
+                <div class="contact-links">
+                    <a href="/cdn-cgi/l/email-protection#e988878188879d9b8887d8dfdbdaa98e84888085c78a8684" class="contact-link"><span class="__cf_email__" data-cfemail="c4a5aaaca5aab0b6a5aaf5f2f6f784a3a9a5ada8eaa7aba9">[email&#160;protected]</span></a>
+                    <a href="tel:+17657019651" class="contact-link">(+1) 765-701-9651</a>
+                </div>
+                <div class="hero-cta">
+                    <a href="/cdn-cgi/l/email-protection#60010e08010e1412010e5156525320070d01090c4e030f0d" class="btn">Send a Message</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Simon An. Designed & Developed with purpose.</p>
+        </footer>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const introContainer = document.getElementById('intro-container');
+            const slidesWrapper = document.querySelector('.intro-slides');
+            let realSlides = Array.from(slidesWrapper.querySelectorAll('.intro-slide'));
+            const dots = Array.from(document.querySelectorAll('.dot'));
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const slideDots = document.querySelector('.slide-dots');
+            const nav = document.getElementById('nav');
+
+            if (!introContainer || realSlides.length === 0) return;
+
+            let slideWidth = window.innerWidth;
+            const realCount = realSlides.length;
+
+            // Create clones for seamless looping
+            const firstClone = realSlides[0].cloneNode(true);
+            const lastClone = realSlides[realSlides.length - 1].cloneNode(true);
+            firstClone.classList.add('clone');
+            lastClone.classList.add('clone');
+            slidesWrapper.appendChild(firstClone);
+            slidesWrapper.insertBefore(lastClone, slidesWrapper.firstChild);
+
+            // All slides (including clones)
+            const slides = Array.from(slidesWrapper.querySelectorAll('.intro-slide'));
+            const total = slides.length; // realCount + 2
+
+            // Current slide index (0..realCount-1)
+            let currentSlide = 0;
+
+            // Position viewport to first real slide (index 1 in slides)
+            const setPosition = (index, behavior = 'auto') => {
+                slideWidth = window.innerWidth;
+                introContainer.scrollTo({ left: (index + 1) * slideWidth, behavior });
+            };
+            setPosition(currentSlide, 'auto');
+
+            const updateDots = () => {
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+            };
+            updateDots();
+
+            // Debounced scroll handler to detect snap end and correct for clones
+            let scrollDebounce;
+            introContainer.addEventListener('scroll', () => {
+                clearTimeout(scrollDebounce);
+                scrollDebounce = setTimeout(() => {
+                    const index = Math.round(introContainer.scrollLeft / slideWidth);
+                    if (index === 0) {
+                        // landed on clone of last -> jump to last real
+                        introContainer.scrollTo({ left: realCount * slideWidth, behavior: 'auto' });
+                        currentSlide = realCount - 1;
+                    } else if (index === total - 1) {
+                        // landed on clone of first -> jump to first real
+                        introContainer.scrollTo({ left: slideWidth, behavior: 'auto' });
+                        currentSlide = 0;
+                    } else {
+                        currentSlide = index - 1;
+                    }
+                    updateDots();
+                }, 70);
+            }, { passive: true });
+
+            // Dot navigation
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    introContainer.scrollTo({ left: (i + 1) * slideWidth, behavior: 'smooth' });
+                    updateDots();
+                });
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide + 1) % realCount;
+                    introContainer.scrollTo({ left: (currentSlide + 1) * slideWidth, behavior: 'smooth' });
+                    updateDots();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    currentSlide = (currentSlide - 1 + realCount) % realCount;
+                    introContainer.scrollTo({ left: (currentSlide + 1) * slideWidth, behavior: 'smooth' });
+                    updateDots();
+                }
+            });
+
+            // Horizontal wheel/trackpad navigation
+            let wheelDebounce;
+            introContainer.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                    e.preventDefault();
+                    clearTimeout(wheelDebounce);
+                    wheelDebounce = setTimeout(() => {
+                        if (e.deltaX > 0) currentSlide = (currentSlide + 1) % realCount;
+                        else currentSlide = (currentSlide - 1 + realCount) % realCount;
+                        introContainer.scrollTo({ left: (currentSlide + 1) * slideWidth, behavior: 'smooth' });
+                        updateDots();
+                    }, 60);
+                }
+            }, { passive: false });
+
+            // Resize handler
+            window.addEventListener('resize', () => {
+                slideWidth = window.innerWidth;
+                introContainer.scrollTo({ left: (currentSlide + 1) * slideWidth, behavior: 'auto' });
+            });
+
+            // Observe other elements for animations
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.experience-item, .project-card, .gallery-item, .skill-category').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Smooth fade of indicators on vertical scroll
+            const introHeight = introContainer.offsetHeight;
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                if (scrollPosition > 100) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+                const fadeEnd = Math.max(introHeight * 0.6, 120);
+                const ratio = Math.min(Math.max(scrollPosition / fadeEnd, 0), 1);
+                const opacity = 1 - ratio;
+                if (scrollIndicator) {
+                    scrollIndicator.style.opacity = String(opacity);
+                    scrollIndicator.style.pointerEvents = opacity < 0.05 ? 'none' : 'auto';
+                    if (ratio >= 1) scrollIndicator.classList.add('hidden'); else scrollIndicator.classList.remove('hidden');
+                }
+                if (slideDots) {
+                    slideDots.style.opacity = String(opacity);
+                    slideDots.style.pointerEvents = opacity < 0.05 ? 'none' : 'auto';
+                    if (ratio >= 1) slideDots.classList.add('hidden'); else slideDots.classList.remove('hidden');
+                }
+            }, { passive: true });
+        });
+    </script>
+</body>
+</html>

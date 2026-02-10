@@ -1,0 +1,406 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --accent: #e8d5b5;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --transition: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 213, 181, 0.1);
+            transition: all 0.3s var(--transition);
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            flex-shrink: 0;
+            margin-right: 2rem;
+        }
+
+        .logo:hover {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex !important;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            visibility: visible !important;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links li {
+            margin: 0;
+            padding: 0;
+            display: inline-block !important;
+            flex-shrink: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+        }
+         /* Main Content */
+        .main-content {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 4rem 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+        /* Resume button special styling */
+        .nav-links a.resume-btn {
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            transition: all 0.3s;
+            font-size: 0.75rem;
+        }
+
+        .nav-links a.resume-btn::before {
+            display: none;
+        }
+
+        .nav-links a.resume-btn:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Filter Buttons */
+        .filter-container {
+            padding: 3rem 4rem;
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1px solid rgba(232, 213, 181, 0.3);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s var(--transition);
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+            color: var(--primary-bg);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .all-projects-container {
+            padding: 2rem 4rem 8rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 3.5rem;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            border: 1px solid rgba(232, 213, 181, 0.1);
+            padding: 3.5rem;
+            transition: all 0.5s var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--transition);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(232, 213, 181, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+        }
+
+        .work-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: #e8d5b5;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: auto;
+        }
+
+        .tag {
+            padding: 0.6rem 1.3rem;
+            background: rgba(232, 213, 181, 0.08);
+            border: 1px solid rgba(232, 213, 181, 0.2);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+
+        .project-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s var(--transition);
+            
+            display: block; /* full width */
+            width: 100%; /* takes full width */
+            margin-top: 2rem;
+            padding: 1rem 2rem; /* more padding */
+            text-align: center;
+        }
+
+        .project-btn:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+            transform: translateX(5px);
+        }
+        
+        .project-card:hover .tag {
+            background: rgba(232, 213, 181, 0.15);
+            border-color: rgba(232, 213, 181, 0.4);
+        }
+
+        /* Hidden class for filtering */
+        .project-card.hidden {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4rem;
+            border-top: 1px solid rgba(232, 213, 181, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .nav-links a.resume-btn {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.7rem;
+            }
+
+            .all-projects-container {
+                padding: 2rem 2rem 6rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.65rem;
+                letter-spacing: 0.08em;
+            }
+
+            .nav-links a.resume-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.65rem;
+            }
+
+            .works-hero {
+                padding: 10rem 2rem 4rem;
+            }
+
+            .filter-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .all-projects-container {
+                padding: 2rem 1.5rem 4rem;
+            }
+
+            .project-card {
+                padding: 2.5rem;
+            }
+        }
+
+
+
+        
