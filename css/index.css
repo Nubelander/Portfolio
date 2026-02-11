@@ -352,17 +352,20 @@
 
         /* Hero Section */
         .hero {
-            padding: 8rem 4rem;
+            padding-top: 8rem;
+            padding-right: 4rem;
+            padding-bottom: 2rem;
+            padding-left: 4rem; 
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(3rem, 8vw, 7rem);
+            font-size: 110px;
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
             background: linear-gradient(135deg, var(--text-light) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -374,8 +377,33 @@
             font-weight: 300;
             letter-spacing: 0.05em;
             color: var(--text-muted);
-            max-width: 800px;
+            max-width: 100%;
             margin-bottom: 3rem;
+        }
+
+        .hero-quote {
+            max-width: 100%;
+            margin: 4rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--accent);
+            position: relative;
+        }
+
+        .hero-quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-quote cite {
+            font-size: 1.3rem;
+            font-style: normal;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            font-weight: bold;
         }
 
         .hero-cta {
@@ -531,19 +559,23 @@
         }
 
         /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
+       .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
 
         .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             background: var(--secondary-bg);
             border: 1px solid rgba(232, 213, 181, 0.1);
-            padding: 2.5rem;
+            padding: 3rem;
             transition: all 0.4s var(--transition);
             position: relative;
             overflow: hidden;
+            align-items: center;
         }
 
         .project-card::before {
@@ -569,6 +601,19 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
+        /* Left side - Content */
+        .project-card-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-number {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
         .project-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
@@ -576,17 +621,11 @@
             margin-bottom: 1rem;
         }
 
-        .project-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-
         .project-description {
             color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 1.5rem;
+            font-family: 'Archivo', serif;
         }
 
         .project-tags {
@@ -603,6 +642,66 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent);
+        }
+
+        /* Right side - Image */
+        .project-card-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card-right img {
+            width: 100%;
+            height: 330px;
+            border-radius: 8px;
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 330px;
+            background: linear-gradient(135deg, rgba(232, 213, 181, 0.1) 0%, rgba(232, 213, 181, 0.03) 100%);
+            border-radius: 8px;
+        }
+
+        .project-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s var(--transition);
+            
+            display: block; /* full width */
+            width: 100%; /* takes full width */
+            margin-top: 2rem;
+            padding: 1rem 2rem; /* more padding */
+            text-align: center;
+        }
+
+        .project-btn:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+            transform: translateX(5px);
+        }
+        
+        .project-card:hover .tag {
+            background: rgba(232, 213, 181, 0.15);
+            border-color: rgba(232, 213, 181, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .project-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .project-card-right {
+                order: -1; /* Move image to top on mobile */
+            }
         }
 
         /* Gallery Section */
@@ -682,52 +781,76 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 3.5rem;
             font-weight: 300;
-            color: rgba(232, 213, 181, 0.15);
+            color: #e8d5b5;
             margin-bottom: 1rem;
             line-height: 1;
         }
 
         /* Contact Section */
-        .contact-content {
+        .contact-banner {
+            padding: 5rem 5rem;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--primary-bg) 100%);
+            max-width: 100%;
         }
 
-        .contact-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
+        .contact-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+        }
+
+        .contact-banner p {
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 3rem;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+            line-height: 2;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
             color: var(--text-light);
             text-decoration: none;
             font-size: 1.1rem;
+            padding: 1.2rem 2.5rem;
+            border: 1px solid rgba(232, 213, 181, 0.3);
             transition: all 0.3s;
         }
 
         .contact-link:hover {
+            border-color: var(--accent);
             color: var(--accent);
-            transform: translateX(5px);
+            transform: translateY(-3px);
         }
 
-        .contact-link::before {
-            content: '→';
+        .btn {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            border: 1px solid var(--accent);
+            background: transparent;
             color: var(--accent);
-            font-size: 1.3rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--primary-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 213, 181, 0.3);
         }
 
         /* Footer */
