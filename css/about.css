@@ -219,7 +219,6 @@
             object-fit: scale-down;
             display: block;
             transition: all 0.6s var(--transition);
-            filter: grayscale(0.3) brightness(0.9);
         }
 
         .profile-placeholder {
@@ -896,4 +895,5 @@
             .contact-banner {
                 margin-top: 2rem;
             }
+
         }
