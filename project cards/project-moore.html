@@ -19,9 +19,20 @@
         <div class="project-number">PROJECT 02</div>
         <h1 class="project-title">Professor Portfolio Website</h1>
         
-        <div class="project-hero-video">
-            Website Demo Video / Interactive Walkthrough
+        <section class="image-section">
+        <div class="image-label">Design Walkthrough</div>
+        <div class="video-container">
+            <div class="video-placeholder">
+                <video src="../assets/works/moore/Portfolio.mp4" title="code" controls></video>
+            </div>
         </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://www.petesokay.com/" target="_blank" class="prototype-btn">
+                <span>View Interactive Prototype</span>
+                <span>→</span>
+            </a>
+        </div>
+    </section>
         
         <div class="project-meta">
             <div class="meta-item">
@@ -30,7 +41,7 @@
             </div>
             <div class="meta-item">
                 <h4>Timeline</h4>
-                <p>August 2025 – November 2025</p>
+                <p>August 2025 - November 2025</p>
             </div>
             <div class="meta-item">
                 <h4>Client</h4>
@@ -145,20 +156,22 @@
             </p>
 
             <div class="image-grid two-col">
-                <div class="browser-mockup">
+                <figure class="image-figure">
+                <div class="browser-mockup-version">
                     <div class="browser-content">
-                         <iframe 
-                            width="100%"
-                            height="100%"
-                            src="https://www.figma.com/proto/ddx90E9KVMdhPHYhpCMVF9/Pete-Pro?page-id=0%3A1&node-id=144-445&viewport=-180%2C-549%2C0.19&t=mDGng90rJgqUyHbQ-8&scaling=contain&content-scaling=responsive&starting-point-node-id=144%3A445&hide-ui=1&share=1">
-                        </iframe>
+                            <img src="../assets/works/moore/re1.png" alt="version 1">
                     </div>
                 </div>
-                <div class="browser-mockup">
+                <figcaption class="image-subtitle">Version 1 - Rejected</figcaption>
+                </figure>
+                <figure class="image-figure">
+                <div class="browser-mockup-version">
                     <div class="browser-content">
-                        Version 2 — Rejected Layout
+                        <img src="../assets/works/moore/re2.png" alt="version 2">
                     </div>
                 </div>
+                <figcaption class="image-subtitle">Version 2 - Rejected</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -179,7 +192,12 @@
             </ul>
 
             <div class="image-grid single">
-                <div class="image-placeholder image-large">Vision Board — Mood, Typography & Tonal References</div>
+                <figure class="image-figure">
+                <div class="browser-content">
+                    <img src="../assets/works/moore/vis.png" alt="vision board">
+                </div>
+                <figcaption class="image-subtitle">Vision Board</figcaption>
+                </figure>
             </div>
 
             <h3>Wireframe Reset</h3>
@@ -190,10 +208,186 @@
             </p>
 
             <div class="image-grid single">
-                <div class="browser-mockup">
-                    <div class="browser-content">
-                        Approved Wireframe — Stripped-Down Structure
+                <figure class="image-figure">
+                <div class="browser-content">
+                    <img src="../assets/works/moore/wireframe.png" alt="approved wireframe">
+                </div>
+                <figcaption class="image-subtitle">Approved wireframe</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             UI ELEMENTS & DESIGN SYSTEM
+             ═══════════════════════════════════════════ -->
+
+        <div class="section-divider">
+            <span>UI Elements & Design System</span>
+        </div>
+
+        <!-- COLORS -->
+        <section class="content-section">
+            <h2>Color Palette</h2>
+            <p>
+                The palette is rooted in a dark, immersive foundation of a near-black background 
+                that lets the bold typography and content images command attention. A warm cream 
+                serves as the primary text and heading color, evoking the ink-on-paper quality 
+                of letterpress work in a digital context.
+            </p>
+
+            <div class="color-system">
+                <div>
+                    <div class="color-group-label">Background & Surface</div>
+                    <div class="color-swatches">
+                        <div class="color-swatch" style="background: #1A1A1A;">
+                            <span class="swatch-label">#1A1A1A</span>
+                        </div>
+                        <div class="color-swatch" style="background: #2A2A2A;">
+                            <span class="swatch-label">#2A2A2A</span>
+                        </div>
+                        <div class="color-swatch" style="background: #333333;">
+                            <span class="swatch-label">#333333</span>
+                        </div>
                     </div>
+
+                    <div class="color-usage-note">
+                        The dark canvas (#1A1A1A) anchors the entire site. Lighter surface tones 
+                        are used sparingly for cards, hover states, and active navigation elements in order to 
+                        create subtle depth without disrupting the immersive feel.
+                    </div>
+                </div>
+
+                <div>
+                    <div class="color-group-label">Text & Accent</div>
+                    <div class="color-swatches">
+                        <div class="color-swatch" style="background: #E8E4C0;">
+                            <span class="swatch-label">#E8E4C0</span>
+                        </div>
+                        <div class="color-swatch" style="background: #F5F5F5;">
+                            <span class="swatch-label">#F5F5F5</span>
+                        </div>
+                        <div class="color-swatch" style="background: #A0A0A0;">
+                            <span class="swatch-label">#A0A0A0</span>
+                        </div>
+                        <div class="color-swatch" style="background: #666666;">
+                            <span class="swatch-label">#666666</span>
+                        </div>
+                    </div>
+
+                    <div class="color-usage-note">
+                        The warm cream (#E8E4C0) is the signature heading color which carries the 
+                        weight of the oversized Impact type. Body text uses a near-white for 
+                        readability, while greys provide hierarchy for secondary and tertiary content.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <section class="content-section">
+            <h2>Typography</h2>
+            <p>
+                The site's typographic identity is deliberately bold and unapologetic. Considering that Impact is a a 
+                condensed, high-contrast display face, it was chosen for its raw visual presence. 
+                Set at oversized scales with wide letter-spacing and dimensional text-shadows, 
+                it gives each page the commanding feel of a poster or broadside print.
+            </p>
+
+            <div class="type-specimen">
+                <div class="type-specimen-header">
+                    <div class="type-meta">
+                        <div class="type-name" style="font-family: 'Impact', 'Arial Black', sans-serif;">Impact</div>
+                        <div class="type-classification">Display · Condensed Sans-Serif</div>
+                    </div>
+                    <div class="type-css-note">font-family: 'Impact', 'Arial Black', sans-serif;</div>
+                </div>
+
+                <div class="type-display-showcase">
+                    <div class="type-impact-word type-impact-large">TEACHING</div>
+                    <div class="type-impact-word type-impact-large">DESIGN</div>
+                    <div class="type-impact-word type-impact-medium">WRITING</div>
+                    <div class="type-impact-word type-impact-medium">ABOUT</div>
+                    <div class="type-impact-ghost">MOORE</div>
+                </div>
+
+                <div class="type-rationale">
+                    Impact's narrow width and extreme boldness create a visual density that references 
+                    wood-type poster printing, creating a direct connection to the client's letterpress practice. 
+                    The 3D text-shadow treatment adds physicality, as if the letters were impression-set 
+                    into the dark surface.
+                </div>
+            </div>
+        </section>
+
+        <!-- NAVIGATION PATTERN -->
+        <section class="content-section">
+            <h2>Navigation Pattern</h2>
+            <p>
+                A persistent left sidebar anchors the site's navigation, which is a deliberate nod to the 
+                table of contents in printed books. The active state uses a vertical bar indicator 
+                with a subtle background shift, while section headings in the content area repeat 
+                the oversized Impact treatment to orient the user within each category.
+            </p>
+
+            <div class="nav-pattern-demo">
+                <div class="nav-sidebar">
+                    <div class="nav-sidebar-title">Design</div>
+                    <div class="nav-sidebar-items">
+                        <div class="nav-sidebar-item active">Books</div>
+                        <div class="nav-sidebar-item">Broadsides</div>
+                        <div class="nav-sidebar-item">Posters</div>
+                        <div class="nav-sidebar-item">Ephemera</div>
+                    </div>
+                </div>
+                <div class="nav-content-area">
+                    <div class="nav-content-heading">Books</div>
+                    <div class="nav-content-grid">
+                        <div class="nav-content-card"></div>
+                        <div class="nav-content-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LAYOUT PROPERTIES -->
+        <section class="content-section">
+            <h2>Layout Properties</h2>
+            <p>
+                The site is built on a set of foundational CSS properties that define its immersive, 
+                centered, full-viewport presentation. These decisions reinforce the idea of each 
+                page as a self-contained environment like a stage for the content, not a scrollable feed.
+            </p>
+
+            <div class="layout-props">
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">background</div>
+                    <div class="layout-prop-value">#1A1A1A</div>
+                    <div class="layout-prop-note">Dark canvas that recedes, letting type and images take focus</div>
+                </div>
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">min-height</div>
+                    <div class="layout-prop-value">100vh</div>
+                    <div class="layout-prop-note">Full viewport height so that each page fills the screen entirely</div>
+                </div>
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">display</div>
+                    <div class="layout-prop-value">flex</div>
+                    <div class="layout-prop-note">Flexbox for centered, responsive content alignment</div>
+                </div>
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">align-items / justify-content</div>
+                    <div class="layout-prop-value">center</div>
+                    <div class="layout-prop-note">Content is vertically and horizontally centered within the viewport</div>
+                </div>
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">font-family</div>
+                    <div class="layout-prop-value">'Impact', 'Arial Black'</div>
+                    <div class="layout-prop-note">Condensed, high-impact display type as the primary face</div>
+                </div>
+                <div class="layout-prop-card">
+                    <div class="layout-prop-key">overflow-x</div>
+                    <div class="layout-prop-value">hidden</div>
+                    <div class="layout-prop-note">Prevents horizontal scroll from oversized type elements</div>
                 </div>
             </div>
         </section>
@@ -209,11 +403,6 @@
                 <strong>Key realization:</strong> The experience the client wanted was easier to build 
                 than to mock up.
             </p>
-
-            <div class="image-grid two-col">
-                <div class="image-placeholder">Figma Mockup — Limited Typographic Fidelity</div>
-                <div class="image-placeholder">Live Browser — Accurate Font Rendering</div>
-            </div>
         </section>
 
         <!-- SOLUTION: CODING AS DESIGN -->
@@ -227,11 +416,11 @@
 
             <h3>Why Code First</h3>
             <ul>
-                <li><strong>Accurate font rendering and spacing</strong> — web fonts behave differently than Figma previews</li>
-                <li><strong>Precise typographic control</strong> — CSS gave full command over letter-spacing, line-height, and OpenType features</li>
-                <li><strong>Faster iteration and feedback</strong> — changes were live instantly, no mockup-to-code translation</li>
-                <li><strong>Immediate responsive testing</strong> — mobile behavior tested continuously, not as an afterthought</li>
-                <li><strong>Higher fidelity client reviews</strong> — Dr. Moore reviewed the actual site, not an approximation</li>
+                <li><strong>Accurate font rendering and spacing</strong> - Web fonts behave differently than Figma previews</li>
+                <li><strong>Precise typographic control</strong> - CSS gave full command over letter-spacing, line-height, and OpenType features</li>
+                <li><strong>Faster iteration and feedback</strong> - Changes were live instantly, no mockup-to-code translation</li>
+                <li><strong>Immediate responsive testing</strong> - Mobile behavior tested continuously, not as an afterthought</li>
+                <li><strong>Higher fidelity client reviews</strong> - Dr. Moore reviewed the actual site, not an approximation</li>
             </ul>
 
             <div class="tech-stack">
@@ -254,11 +443,14 @@
             </p>
 
             <div class="image-grid single">
+                <figure class="image-figure">
                 <div class="browser-mockup">
                     <div class="browser-content">
                         <img src="../assets/works/moore/final.png" alt="final">
                     </div>
                 </div>
+                <figcaption class="image-subtitle">Final Design </figcaption>
+            </figure>
             </div>
         </section>
 
@@ -276,8 +468,8 @@
                     <div class="stat-label">Load Time</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Figma Mockups</div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Screens</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">8</div>
@@ -298,11 +490,11 @@
         <section class="content-section">
             <h2>What I Learned</h2>
             <ul>
-                <li><strong>Rejected designs often clarify the real problem</strong> — the two failed layouts narrowed the path to the right solution</li>
-                <li><strong>Code can be a design medium, not just implementation</strong> — designing in the browser produced higher fidelity than any mockup</li>
-                <li><strong>Simplicity requires deliberate, confident decisions</strong> — restraint is harder than complexity</li>
-                <li><strong>Adapting process to the project leads to stronger outcomes</strong> — no single workflow fits every client</li>
-                <li><strong>Typography-driven design demands tools that respect nuance</strong> — Figma's rendering couldn't match what the browser delivered</li>
+                <li><strong>Rejected designs often clarify the real problem</strong> - The two failed layouts narrowed the path to the right solution</li>
+                <li><strong>Code can be a design medium, not just implementation</strong> - Designing in the browser produced higher fidelity than any mockup</li>
+                <li><strong>Simplicity requires deliberate, confident decisions</strong> - Restraint is harder than complexity</li>
+                <li><strong>Adapting process to the project leads to stronger outcomes</strong> - No single workflow fits every client</li>
+                <li><strong>Typography-driven design demands tools that respect nuance</strong> - Figma's rendering couldn't match what the browser delivered</li>
             </ul>
         </section>
 
