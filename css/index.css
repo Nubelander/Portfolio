@@ -224,7 +224,7 @@
 
         /* Navigation */
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
@@ -334,12 +334,6 @@
             background: var(--accent);
             color: var(--primary-bg);
             transform: translateY(-2px);
-        }
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent);
-            transition: width 0.3s var(--transition);
         }
 
         .nav-links a:hover {
