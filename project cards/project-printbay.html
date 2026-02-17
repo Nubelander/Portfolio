@@ -4,913 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintBay Studio Redesign - Simon An</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-bg: #0a0a0a;
-            --secondary-bg: #1a1a1a;
-            --accent: #e8d5b5;
-            --text-light: #f5f5f5;
-            --text-muted: #a0a0a0;
-            --transition: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        body {
-            font-family: 'Archivo', sans-serif;
-            background: var(--primary-bg);
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 2rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(232, 213, 181, 0.1);
-        }
-
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .logo:hover {
-            color: var(--accent);
-        }
-
-        .back-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-
-        .back-link:hover {
-            color: var(--accent);
-            transform: translateX(-5px);
-        }
-
-        .back-link::before {
-            content: '←';
-            font-size: 1.2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 150px 4rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-label {
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        .hero-meta {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(232, 213, 181, 0.1);
-            border-bottom: 1px solid rgba(232, 213, 181, 0.1);
-        }
-
-        .meta-item {
-            text-align: center;
-        }
-
-        .meta-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
-        .meta-value {
-            font-size: 1rem;
-            color: var(--text-light);
-        }
-
-        .prototype-btn-small {
-            display: inline-block;
-            padding: 0.9rem 2rem;
-            background: transparent;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            transition: all 0.3s var(--transition);
-        }
-
-        .prototype-btn-small:hover {
-            background: var(--accent);
-            color: var(--primary-bg);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(232, 213, 181, 0.2);
-        }
-
-        /* Story Section */
-        .story-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-        }
-
-        .section-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            color: rgba(232, 213, 181, 0.1);
-            font-weight: 300;
-            margin-bottom: -2rem;
-            line-height: 1;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: var(--accent);
-        }
-
-        .story-text {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-        }
-
-        .story-text strong {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background: rgba(232, 213, 181, 0.05);
-            border-left: 3px solid var(--accent);
-            padding: 2rem;
-            margin: 3rem 0;
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            line-height: 1.8;
-        }
-
-        /* Insights List */
-        .insights-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .insights-list li {
-            padding: 1.2rem 0 1.2rem 2rem;
-            border-bottom: 1px solid rgba(232, 213, 181, 0.05);
-            position: relative;
-            color: var(--text-muted);
-        }
-
-        .insights-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .insights-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Problem Images Grid */
-        .problem-images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .problem-image {
-            aspect-ratio: 16/10;
-            border: 1px solid rgba(232, 213, 181, 0.1);
-            background: var(--secondary-bg);
-            overflow: hidden;
-            transition: all 0.4s var(--transition);
-        }
-
-        .problem-image:hover {
-            border-color: rgba(232, 213, 181, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .problem-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .problem-placeholder span {
-            font-size: 3rem;
-            opacity: 0.7;
-        }
-
-        .problem-placeholder p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .problem-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Image Grid */
-        .image-section {
-            max-width: 1400px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-        }
-
-        .image-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .wireframe-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .wireframe-img {
-            width: 100%;
-            border: 1px solid rgba(232, 213, 181, 0.1);
-            background: var(--secondary-bg);
-            aspect-ratio: 3/4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .wireframe-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        /* Video Container */
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            aspect-ratio: 16/9;
-            background: var(--secondary-bg);
-            border: 1px solid rgba(232, 213, 181, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            color: var(--accent);
-            transition: all 0.4s var(--transition);
-            cursor: pointer;
-        }
-
-        .video-placeholder:hover {
-            background: rgba(232, 213, 181, 0.05);
-        }
-
-        .video-placeholder svg {
-            opacity: 0.7;
-            transition: all 0.4s var(--transition);
-        }
-
-        .video-placeholder:hover svg {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .video-placeholder p {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .video-caption {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Prototype Button */
-        .prototype-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 2.5rem;
-            background: var(--accent);
-            color: var(--primary-bg);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            border-radius: 4px;
-            transition: all 0.3s var(--transition);
-            border: 2px solid var(--accent);
-        }
-
-        .prototype-btn:hover {
-            background: transparent;
-            color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(232, 213, 181, 0.3);
-        }
-
-        .prototype-btn span:last-child {
-            font-size: 1.3rem;
-            transition: transform 0.3s var(--transition);
-        }
-
-        .prototype-btn:hover span:last-child {
-            transform: translateX(5px);
-        }
-
-        /* Key Insight Card */
-        .insight-card {
-            background: linear-gradient(135deg, rgba(232, 213, 181, 0.08) 0%, rgba(232, 213, 181, 0.02) 100%);
-            border: 1px solid rgba(232, 213, 181, 0.2);
-            padding: 3rem;
-            margin: 4rem 0;
-            text-align: center;
-        }
-
-        .insight-card-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .insight-card-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        /* Outcome Section */
-        .outcome-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .outcome-item {
-            background: var(--secondary-bg);
-            padding: 2.5rem;
-            border: 1px solid rgba(232, 213, 181, 0.1);
-            transition: all 0.4s var(--transition);
-        }
-
-        .outcome-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(232, 213, 181, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .outcome-icon {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .outcome-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .outcome-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Reflection */
-        .reflection-section {
-            background: var(--secondary-bg);
-            padding: 6rem 2rem;
-            margin: 6rem 0 0;
-        }
-
-        .reflection-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .reflection-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.5rem, 3vw, 2.2rem);
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .reflection-quote::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -10px;
-            font-size: 5rem;
-            color: rgba(232, 213, 181, 0.2);
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .reflection-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-        }
-
-        /* Footer Navigation */
-        .project-nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(232, 213, 181, 0.1);
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(232, 213, 181, 0.3);
-            background: transparent;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .nav-btn:hover {
-            background: var(--accent);
-            color: var(--primary-bg);
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .nav-btn.prev::before {
-            content: '←';
-        }
-
-        .nav-btn.next::after {
-            content: '→';
-        }
-
-        footer {
-            padding: 3rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(232, 213, 181, 0.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav, .hero, .story-section, .image-section {
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-
-            .hero-meta {
-                gap: 1.5rem;
-            }
-
-            .wireframe-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .outcome-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-number {
-                font-size: 3rem;
-            }
-
-            .project-nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 2rem 1.5rem;
-            }
-
-            .reflection-quote {
-                padding-left: 2rem;
-            }
-
-            .video-placeholder p {
-                font-size: 1.2rem;
-            }
-
-            .video-placeholder svg {
-                width: 60px;
-                height: 60px;
-            }
-
-            .prototype-btn {
-                padding: 1rem 2rem;
-                font-size: 0.9rem;
-            }
-
-            .prototype-btn-small {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.85rem;
-            }
-
-            .problem-images-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .problem-placeholder span {
-                font-size: 2.5rem;
-            }
-
-            .problem-placeholder p {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/printbay.css">
 </head>
 <body>
     <nav>
-        <a href="index-improved.html" class="logo">Simon An</a>
+        <a href="Portfolio\index.html" class="logo">Simon An</a>
         <a href="../all-works.html" class="back-link">All Works</a>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="hero-label">UX/UI Design • Student Project</div>
-        <h1 class="hero-title">PrintBay Studio</h1>
-        <p class="hero-subtitle">
-            Translating the vibrant, experimental energy of a letterpress studio 
-            into a digital experience that students actually understand and engage with.
-        </p>
-        <div class="hero-meta">
+    <div class="project-hero">
+        <div class="project-number">UX/UI Design • Student Project</div>
+        <h1 class="project-title">PrintBay Studio</h1>
+
+        <!-- Video Demo -->
+        <section class="image-section">
+            <div class="image-label">Design Walkthrough</div>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <video src="../assets/works/pb/printbay.mov" title="pb" controls></video>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.figma.com/proto/RufQ2dj4bVH0PmvmSICQME/Flesh-pit?node-id=1051-1074&p=f&viewport=5206%2C-11283%2C0.5&t=B8JdX7L0PJAZNvQS-8&scaling=scale-down&content-scaling=fixed&starting-point-node-id=733%3A243&page-id=630%3A2&hide-ui=1" target="_blank" class="prototype-btn">
+                    <span>View Interactive Prototype</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="project-meta">
             <div class="meta-item">
-                <div class="meta-label">Role</div>
-                <div class="meta-value">UX Designer</div>
+                <h4>Role</h4>
+                <p>UX Designer</p>
             </div>
             <div class="meta-item">
-                <div class="meta-label">Timeline</div>
-                <div class="meta-value">Summer 2024</div>
+                <h4>Timeline</h4>
+                <p>Summer 2024</p>
             </div>
             <div class="meta-item">
-                <div class="meta-label">Client</div>
-                <div class="meta-value">PATTeRN Initiative</div>
+                <h4>Client</h4>
+                <p>PATTeRN Initiative</p>
             </div>
             <div class="meta-item">
-                <div class="meta-label">Deliverables</div>
-                <div class="meta-value">Website Redesign</div>
+                <h4>Deliverables</h4>
+                <p>Website Redesign</p>
             </div>
         </div>
-    </section>
 
-    <!-- The Problem -->
-    <section class="story-section">
-        <div class="section-number">01</div>
-        <h2 class="section-title">The Disconnect</h2>
-        <p class="story-text">
-            PrintBay Studio is a hands-on letterpress and printmaking space connected to Purdue's 
-            PATTeRN research initiative. Students love the studio—its tactile, experimental nature 
-            draws them in. But the website? That told a different story.
-        </p>
-        <p class="story-text">
-            The existing site was <strong>outdated, confusing, and inaccessible</strong>. Key 
-            information was buried in PDFs. Internal jargon alienated newcomers. Students couldn't 
-            find basic details like workshop schedules or how to get involved. The digital presence 
-            didn't match the studio's dynamic, welcoming reality.
-        </p>
-        
-        <div class="highlight-box">
-            "A key challenge was translating the studio's vibrant, experimental culture into a 
-            digital space. The existing language felt outdated and failed to communicate the 
-            dynamism students experience in person."
+        <div class="project-tags">
+            <span class="tag">UX Research</span>
+            <span class="tag">Heuristic Evaluation</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">Information Architecture</span>
         </div>
-    </section>
+    </div>
 
-    <!-- Research -->
-    <section class="story-section">
-        <div class="section-number">02</div>
-        <h2 class="section-title">Understanding the Gap</h2>
-        <p class="story-text">
-            To uncover what wasn't working, I conducted <strong>heuristic evaluations</strong> 
-            of the existing site and <strong>user interviews</strong> with students during the 
-            summer semester, when campus engagement was naturally lower.
-        </p>
-        
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--accent);">
-            What I Found:
-        </h3>
-        <ul class="insights-list">
-            <li>Introductory content separated in a PDF increased cognitive load—users expected info directly on the page</li>
-            <li>Low readability due to poor color contrast made text difficult to scan</li>
-            <li>Confusing layout with rotated text made content genuinely hard to read</li>
-            <li>Overemphasis on decorative design obscured actual meaning and accessibility</li>
-            <li>Students were confused about the relationship between PrintBay and PATTeRN</li>
-            <li>Participants struggled to find staff contact info, workshop schedules, and enrollment forms</li>
-            <li>Users expected hyperlinks, newsletters, and functional forms—none existed</li>
-        </ul>
+    <div class="project-content">
 
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin: 3rem 0 1.5rem; color: var(--accent); text-align: center;">
-            Problems Identified
-        </h3>
-        <div class="problem-images-grid">
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>📄</span>
-                    <p>PDF Dependency</p>
-                </div>
-            </div>
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>👁️</span>
-                    <p>Low Contrast Issues</p>
-                </div>
-            </div>
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>🔄</span>
-                    <p>Rotated Text Problems</p>
-                </div>
-            </div>
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>🎨</span>
-                    <p>Decorative Over Function</p>
-                </div>
-            </div>
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>🔗</span>
-                    <p>Missing Navigation</p>
-                </div>
-            </div>
-            <div class="problem-image">
-                <div class="problem-placeholder">
-                    <span>ℹ️</span>
-                    <p>Hidden Information</p>
-                </div>
-            </div>
-        </div>
-        <p class="image-caption" style="margin-top: 1.5rem;">
-            Screenshots showing usability issues from the original site
-        </p>
-    </section>
+        <!-- The Problem -->
+        <section class="content-section">
+            <h2>The Disconnect</h2>
+            <p>
+                PrintBay Studio is a hands-on letterpress and printmaking space connected to Purdue's 
+                PATTeRN research initiative. Students love the studio—its tactile, experimental nature 
+                draws them in. But the website told a different story.
+            </p>
+            <p>
+                The existing site was <strong>outdated, confusing, and inaccessible</strong>. Key 
+                information was buried in PDFs. Internal jargon alienated newcomers. Students couldn't 
+                find basic details like workshop schedules or how to get involved. The digital presence 
+                didn't match the studio's dynamic, welcoming reality.
+            </p>
+            <p class="highlight-box">
+                "A key challenge was translating the studio's vibrant, experimental culture into a 
+                digital space. The existing language felt outdated and failed to communicate the 
+                dynamism students experience in person."
+            </p>
+        </section>
 
-    <!-- Key Insight -->
-    <div class="image-section">
-        <div class="insight-card">
-            <div class="insight-card-title">The Real Mental Model</div>
-            <p class="insight-card-text">
+        <!-- Research -->
+        <section class="content-section">
+            <h2>Understanding the Gap</h2>
+            <p>
+                To uncover what wasn't working, I conducted <strong>heuristic evaluations</strong> 
+                of the existing site and <strong>user interviews</strong> with students during the 
+                summer semester, when campus engagement was naturally lower.
+            </p>
+            
+            <h3>What I Found</h3>
+            <ul>
+                <li>Introductory content separated in a PDF increased cognitive load—users expected info directly on the page</li>
+                <li>Low readability due to poor color contrast made text difficult to scan</li>
+                <li>Confusing layout with rotated text made content genuinely hard to read</li>
+                <li>Overemphasis on decorative design obscured actual meaning and accessibility</li>
+                <li>Students were confused about the relationship between PrintBay and PATTeRN</li>
+                <li>Participants struggled to find staff contact info, workshop schedules, and enrollment forms</li>
+                <li>Users expected hyperlinks, newsletters, and functional forms—none existed</li>
+            </ul>
+
+            <h3>Problems Identified</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">📄</span>
+                    <span>PDF Dependency</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">👁️</span>
+                    <span>Low Contrast Issues</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🔄</span>
+                    <span>Rotated Text Problems</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🎨</span>
+                    <span>Decorative Over Function</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🔗</span>
+                    <span>Missing Navigation</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">ℹ️</span>
+                    <span>Hidden Information</span>
+                </div>
+            </div>
+            <p class="image-subtitle">
+                Screenshots showing usability issues from the original site
+            </p>
+        </section>
+
+        <!-- Key Insight -->
+        <section class="content-section">
+            <h2>The Real Mental Model</h2>
+            <p>
                 Students' mental model starts with <strong>PrintBay</strong> as the main entry point, 
                 not PATTeRN. To improve engagement, the website needed to prioritize accessible content, 
                 showcase the studio's energetic presentation, and create clear pathways for student involvement.
             </p>
-        </div>
-    </div>
+        </section>
 
-    <!-- Wireframes -->
-    <section class="image-section">
-        <div class="image-label">Early Wireframes</div>
-        <div class="wireframe-grid">
-            <div class="wireframe-img">
-                <img src="/mnt/user-data/uploads/1770430141316_image.png" alt="Wireframe sketches">
+        <!-- Wireframes -->
+        <section class="content-section">
+            <h3>Early Wireframes</h3>
+            <div class="image-grid two-col">
+                <div class="image-placeholder">
+                    Wireframe Sketches
+                </div>
+                <div class="image-placeholder">
+                    Mid-fidelity Designs
+                </div>
             </div>
-            <div class="wireframe-img">
-                <img src="/mnt/user-data/uploads/1770430141580_image.png" alt="Mid-fidelity designs">
-            </div>
-        </div>
-        <p class="image-caption">
-            Early wireframes focused on restructuring information architecture, clarifying terminology, 
-            and ensuring essential information was immediately visible without reliance on PDFs.
-        </p>
-    </section>
-
-    <!-- Video Demo -->
-    <section class="image-section">
-        <div class="image-label">Design Walkthrough</div>
-        <div class="video-container">
-            <div class="video-placeholder">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
-                </svg>
-                <p>Video Demonstration</p>
-                <span class="video-caption">Full walkthrough of the redesigned experience</span>
-            </div>
-            <!-- Replace with actual video embed when ready:
-            <iframe src="YOUR_VIDEO_URL" frameborder="0" allowfullscreen></iframe>
-            -->
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="https://www.figma.com/proto/YOUR_PROTOTYPE_LINK" target="_blank" class="prototype-btn">
-                <span>View Interactive Prototype</span>
-                <span>→</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Design Evolution -->
-    <section class="story-section">
-        <div class="section-number">03</div>
-        <h2 class="section-title">From Structure to Story</h2>
-        <p class="story-text">
-            My first mid-fidelity designs introduced <strong>clearer hierarchy and navigation</strong>. 
-            But during review, the client noted that the homepage still felt too similar to the original 
-            site—it didn't fully express the studio's character.
-        </p>
-        <p class="story-text">
-            This feedback was a turning point. I realized I needed to <strong>rethink the foundational 
-            layout</strong>, not just refine details. Moving into high-fidelity design, I departed further 
-            from the original structure, reworking the homepage hierarchy to let <strong>visual storytelling 
-            lead the experience</strong> rather than text alone.
-        </p>
-        
-        <div class="highlight-box">
-            "This transition reinforced the importance of using feedback not only to refine details, 
-            but to reassess foundational layout decisions to better align with the studio's goals."
-        </div>
-    </section>
-
-    <!-- Outcome -->
-    <section class="story-section">
-        <div class="section-number">04</div>
-        <h2 class="section-title">The Result</h2>
-        
-        <div class="outcome-grid">
-            <div class="outcome-item">
-                <div class="outcome-icon">🎯</div>
-                <h3 class="outcome-title">Repositioned Focus</h3>
-                <p class="outcome-desc">
-                    PrintBay became the primary entry point, aligning the site with how students 
-                    actually discover and understand the studio.
-                </p>
-            </div>
-            
-            <div class="outcome-item">
-                <div class="outcome-icon">📄</div>
-                <h3 class="outcome-title">Improved Accessibility</h3>
-                <p class="outcome-desc">
-                    Removed reliance on PDFs by presenting information directly, in scannable, 
-                    web-native sections.
-                </p>
-            </div>
-            
-            <div class="outcome-item">
-                <div class="outcome-icon">✨</div>
-                <h3 class="outcome-title">Visual System</h3>
-                <p class="outcome-desc">
-                    Established a design language that communicates PrintBay's energy, process, 
-                    and hands-on culture through visual hierarchy and storytelling.
-                </p>
-            </div>
-            
-            <div class="outcome-item">
-                <div class="outcome-icon">🚀</div>
-                <h3 class="outcome-title">Clear Pathways</h3>
-                <p class="outcome-desc">
-                    Created visible opportunities, contact points, and program information to 
-                    support student involvement and engagement.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reflection -->
-    <section class="reflection-section">
-        <div class="reflection-content">
-            <h2 class="section-title">Reflections</h2>
-            <p class="reflection-quote">
-                Visual design is not decoration—it's a core part of communication.
+            <p class="image-subtitle">
+                Early wireframes focused on restructuring information architecture, clarifying terminology, 
+                and ensuring essential information was immediately visible without reliance on PDFs.
             </p>
-            <p class="reflection-text">
+        </section>
+
+        <!-- Mid-Fidelity Rejection -->
+        <section class="content-section">
+            <h2>The Mid-Fidelity Pivot</h2>
+            <p>
+                With the wireframes approved, I moved into a mid-fidelity prototype that built directly 
+                on the layout my client had signed off on. The structure was clearer, the hierarchy 
+                improved, and the navigation made sense. I felt confident presenting it.
+            </p>
+            <p>
+                The client, however, had a different reaction. Despite having <strong>approved the 
+                layout direction earlier</strong>, he now felt the homepage relied too heavily on 
+                materials carried over from the old website. He wanted the studio's digital presence 
+                to feel entirely fresh—<strong>no reuse of legacy imagery, text blocks, or visual 
+                patterns from the original site</strong> on the homepage.
+            </p>
+            <p class="highlight-box">
+                "The client's feedback was clear: the homepage needed to stand on its own. Even though 
+                the layout had been approved, the content within it still carried the weight of the 
+                old site—and that wasn't the direction he envisioned for the studio."
+            </p>
+            <p>
+                Rather than trying to salvage the prototype, I made the decision to <strong>start the 
+                homepage from scratch</strong>. I went back to the reference sites and additional 
+                inspirations my client had shared with me, studying how other studios and creative 
+                spaces presented themselves online. This time, I focused less on restructuring the 
+                existing content and more on <strong>letting the studio's identity lead</strong>—using 
+                new visual storytelling, fresh imagery, and a layout that felt like a departure rather 
+                than a revision.
+            </p>
+            <p>
+                This pivot was ultimately what shaped the final design. The earlier research and 
+                wireframing work wasn't wasted—it gave me a deep understanding of the information 
+                architecture and user needs. But the visual direction needed to be <strong>reimagined 
+                from the ground up</strong> to match the energy my client wanted to project.
+            </p>
+
+            <h3>Inspiration Review</h3>
+            <div class="image-grid">
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🔍</span>
+                    <span>Client Reference Site 1</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🔍</span>
+                    <span>Client Reference Site 2</span>
+                </div>
+                <div class="image-placeholder">
+                    <span class="placeholder-icon">🔍</span>
+                    <span>Client Reference Site 3</span>
+                </div>
+            </div>
+            <p class="image-subtitle">
+                Reference sites shared by the client that informed the new visual direction
+            </p>
+        </section>
+
+        <!-- Outcome -->
+        <section class="content-section">
+            <h2>The Result</h2>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">Repositioned</div>
+                    <div class="stat-label">Focus on PrintBay as primary entry point</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📄</div>
+                    <div class="stat-number">Accessible</div>
+                    <div class="stat-label">Removed reliance on PDFs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">✨</div>
+                    <div class="stat-number">Visual System</div>
+                    <div class="stat-label">Communicates PrintBay's energy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">🚀</div>
+                    <div class="stat-number">Clear Paths</div>
+                    <div class="stat-label">Visible pathways for involvement</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reflection -->
+        <section class="content-section">
+            <h2>Reflections</h2>
+            <p class="highlight-box">
+                "Visual design is not decoration—it's a core part of communication."
+            </p>
+            <p>
                 This project taught me that <strong>client feedback can signal deeper issues</strong>. 
                 When the mid-fidelity designs didn't capture the studio's character, it wasn't just 
                 about colors or fonts—it meant the layout and hierarchy needed rethinking.
             </p>
-            <p class="reflection-text" style="margin-top: 1.5rem;">
+            <p>
                 Meaningful iteration often requires <strong>revisiting layout and hierarchy</strong>, 
                 not just surface-level refinements. Designing within institutional constraints also 
                 requires strategic trade-offs between branding consistency and user-centered clarity.
             </p>
-            <p class="reflection-text" style="margin-top: 1.5rem;">
+            <p>
                 Even with limited access to users during the summer semester, <strong>qualitative 
                 insights from consistent patterns</strong> in interviews strongly informed the structure 
                 and direction of the redesign.
             </p>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
     <!-- Navigation -->
     <div class="project-nav">
-        <a href="project-our.html" class="nav-btn prev">Previous Project</a>
-        <a href="project-chekhov.html" class="nav-btn next">Next Project</a>
+        <a href="#" class="nav-btn prev">Previous Project</a>
+        <a href="#" class="nav-btn next">Next Project</a>
     </div>
 
     <footer>
