@@ -310,36 +310,6 @@ nav {
             cursor: pointer;
         }
 
-.browser-mockup {
-    background: #2a2a2a;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
-    border: 1px solid rgba(232, 213, 181, 0.1);
-    width: 100%;
-    max-width: 900px;
-    height: 600px;
-    margin: 0 auto;
-}
-
-.browser-mockup-version {
-    background: #2a2a2a;
-    border-radius: 8px 8px 8px 8px;
-    overflow: hidden;
-    border: 1px solid rgba(232, 213, 181, 0.1);
-    width: 100%;
-    max-width: 900px;
-    height: 480px;
-    margin: 0 auto;
-}
-
-.browser-header {
-    background: #1a1a1a;
-    padding: 0.8rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .image-figure {
     margin: 0;
 }
@@ -355,16 +325,6 @@ nav {
     justify-content: center;
 }
 
-.browser-mockup {
-  background: #2a2a2a;
-  border-radius: 8px 8px 0 0;
-  overflow: hidden;
-  border: 1px solid rgba(232, 213, 181, 0.1);
-  width: 100%;
-  max-width: 900px;
-  height: 600px;
-  margin: 0 auto;
-}
 
 .browser-content img {
     width: 100%;

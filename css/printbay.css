@@ -217,7 +217,6 @@
         }
 
         .image-placeholder {
-            aspect-ratio: 16/9;
             background: var(--secondary-bg);
             border: 1px solid rgba(232, 213, 181, 0.1);
             display: flex;
