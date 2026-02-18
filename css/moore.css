@@ -58,7 +58,7 @@ nav {
     gap: 0.5rem;
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: all 0.3s;
 }
 
@@ -489,7 +489,7 @@ nav {
     color: var(--text-light);
     text-decoration: none;
     transition: all 0.3s;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .nav-btn:hover {
