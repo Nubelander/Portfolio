@@ -26,20 +26,19 @@
 
     <!-- Hero Section -->
     <header class="gallery-hero">
-        <h1 class="page-title">All Research</h1>
+        <h1 class="page-title">Gallery</h1>
         <p class="page-intro">
-            An expanded visual exploration of cultural intersections, architectural beauty, urban landscapes, 
-            and the moments that bridge Vietnamese heritage, Russian literary studies, and cross-cultural 
-            understanding. Each image tells a story of identity, place, and perspective.
+            A collection of my work across design, modeling, and creative projects. 
+            From graphic design to 3D renders and beyond, here's a look at what I've been building.
         </p>
     </header>
 
     <!-- Filter Buttons -->
     <div class="filter-container">
         <button class="filter-btn active" data-filter="all">All Research</button>
-        <button class="filter-btn" data-filter="vietnamese">AI Governance</button>
-        <button class="filter-btn" data-filter="russian">Russian Studies</button>
-        <button class="filter-btn" data-filter="urban">Data Privacy</button>
+        <button class="filter-btn" data-filter="vietnamese">Graphic Design</button>
+        <button class="filter-btn" data-filter="russian">3D Modeling</button>
+        <button class="filter-btn" data-filter="urban">Illustration</button>
     </div>
 
     <!-- Main Gallery -->
@@ -59,21 +58,19 @@
 
             <!-- Image 2 -->
             <div class="gallery-item" data-category="russian architecture" data-image="/mnt/user-data/uploads/1765129256404_image.png" data-title="Здравствуйте, я саймон" data-subtitle="Russian Studies">
-                <img src="/mnt/user-data/uploads/1765129256404_image.png" alt="Classical Architectural Interior">
+                <img src="assets\Gallery\Ball.jpeg" alt="CAD work">
                 <div class="gallery-overlay">
-                    <h3>Здравствуйте, я саймон</h3>
-                    <p>Russian Studies</p>
+                    <h3>Ball</h3>
+                    <p>3D Modeling</p>
                     <div class="gallery-description">
-                        Classical architecture reflecting the depth and grandeur of Russian culture. This space 
-                        embodies the literary richness I explore through my research on Chekhov—where every arch 
-                        and column tells a story of cultural heritage and artistic expression.
+                        3D modeling of a ball, showcasing technical skill and attention to detail in digital design.
                     </div>
                 </div>
             </div>
 
             <!-- Image 3 -->
             <div class="gallery-item" data-category="urban" data-image="/mnt/user-data/uploads/1765129273683_image.png" data-title="Hi, I'm Simon" data-subtitle="Cross-Cultural Perspectives">
-                <img src="/mnt/user-data/uploads/1765129273683_image.png" alt="Urban Nightscape">
+                <img src="assets\Gallery\MFPNP.png" alt="Urban Nightscape">
                 <div class="gallery-overlay">
                     <h3>Hi, I'm Simon</h3>
                     <p>Cross-Cultural Perspectives</p>
@@ -222,7 +219,7 @@
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
-                const imgSrc = item.dataset.image;
+                const imgSrc = item.querySelector('img').src;
                 const title = item.dataset.title;
                 const subtitle = item.dataset.subtitle;
                 
