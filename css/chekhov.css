@@ -305,7 +305,9 @@ strong {
 
 @media (max-width: 768px) {
     .symposium-block { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
-    .symposium-badge { width: 100%; aspect-ratio: 3/4; }
+    .symposium-badge { 
+        width: 100%; 
+    }
 }
 
 /* BUTTONS */
@@ -737,7 +739,6 @@ strong {
 
 .symposium-badge {
     width: 100%; 
-    aspect-ratio: 3/4; 
     border: 1px solid rgba(232,213,181,0.2);
     overflow: hidden;
     flex-shrink: 0;
