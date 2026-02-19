@@ -373,7 +373,7 @@
         .lightbox-caption {
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--accent);
             flex-shrink: 0;   /* never gets squished out of view */
         }
