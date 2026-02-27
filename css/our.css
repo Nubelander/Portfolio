@@ -273,6 +273,129 @@ nav {
     line-height: 1.5;
 }
 
+/* IMAGES & MEDIA */
+.image-section {
+    margin: 3rem 0 4rem;
+}
+
+.image-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    background: var(--secondary-bg);
+    border: 1px solid rgba(232, 213, 181, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--accent);
+    transition: all 0.4s var(--transition);
+}
+
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.video-placeholder:hover {
+    background: rgba(232, 213, 181, 0.05);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0 1rem;
+}
+
+.image-figure {
+    margin: 0;
+}
+
+.image-placeholder {
+    background: var(--secondary-bg);
+    border: 1px solid rgba(232, 213, 181, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 220px;
+    transition: all 0.3s var(--transition);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-placeholder:hover {
+    border-color: rgba(232, 213, 181, 0.3);
+    transform: translateY(-4px);
+}
+
+.image-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* PROTOTYPE BUTTON */
+.prototype-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 2.4rem;
+    background: var(--accent);
+    color: var(--primary-bg);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    transition: all 0.3s var(--transition);
+    border: 2px solid var(--accent);
+}
+
+.prototype-btn:hover {
+    background: transparent;
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.prototype-btn span:last-child {
+    font-size: 1.3rem;
+    transition: transform 0.3s var(--transition);
+}
+
+.prototype-btn:hover span:last-child {
+    transform: translateX(5px);
+}
+
 /* PROJECT NAV & FOOTER */
 .project-nav {
     display: flex;
