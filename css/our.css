@@ -328,6 +328,17 @@ nav {
     margin: 3rem 0 1rem;
 }
 
+.image-grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.image-grid.single-wide {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .image-figure {
     margin: 0;
 }
@@ -362,6 +373,29 @@ nav {
     margin-top: 0.75rem;
     line-height: 1.5;
     text-align: center;
+}
+
+/* HORIZONTAL STRIP */
+.image-strip {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin: 3rem 0 1rem;
+}
+
+.image-strip::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-strip::-webkit-scrollbar-thumb {
+    background: rgba(232, 213, 181, 0.35);
+}
+
+.image-strip-item {
+    min-width: 260px;
+    max-width: 320px;
+    flex: 0 0 auto;
 }
 
 /* PROTOTYPE BUTTON */
