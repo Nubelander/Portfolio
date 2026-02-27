@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purdue OUR Website Pathway - Simon An</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/our.css">
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">Simon An</a>
+    <a href="../all-works.html" class="back-link">Back to All Works</a>
+</nav>
+
+<div class="project-hero">
+    <div class="project-number">UX Research • Experience Studio</div>
+    <h1 class="project-title">Purdue OUR Website Pathway</h1>
+    <p class="project-subtitle">
+        Bridging the gap between a printed undergraduate research pathway and a usable, student-centered web experience.
+    </p>
+
+    <div class="project-meta">
+        <div class="meta-item">
+            <h4>Timeline</h4>
+            <p>Spring 2025 · 15 weeks</p>
+        </div>
+        <div class="meta-item">
+            <h4>Role</h4>
+            <p>UX Researcher & Designer</p>
+        </div>
+        <div class="meta-item">
+            <h4>Team</h4>
+            <p>9 UX Design students</p>
+        </div>
+        <div class="meta-item">
+            <h4>Partner</h4>
+            <p>Purdue Office of Undergraduate Research</p>
+        </div>
+    </div>
+
+    <div class="project-tags">
+        <span class="tag">UX Research</span>
+        <span class="tag">Information Architecture</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">User Flows</span>
+        <span class="tag">Prototyping</span>
+    </div>
+</div>
+
+<div class="project-content">
+
+    <section class="content-section">
+        <h2>Context</h2>
+        <p>
+            The Purdue Office of Undergraduate Research (OUR) supports students in finding, funding, and completing
+            research projects across campus. While the office had developed a detailed <strong>printed pathway</strong>
+            explaining the steps from discovering opportunities to presenting research, students still struggled to
+            navigate the web experience.
+        </p>
+        <p>
+            Our Experience Studio team was tasked with designing a <strong>guided web pathway</strong> that translates
+            this print artifact into an interactive experience. The goal was to align the website with how students
+            actually search for research, while preserving the clarity and structure of the original pathway.
+        </p>
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Undergrad Interviews</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Grad Interviews</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Current-State Tests</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Prototype Rounds</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>The Problem</h2>
+        <p>
+            Students knew that Purdue OUR existed, but the digital experience made it difficult to act on that
+            awareness. The pathway looked clear on paper, yet the website felt scattered, text-heavy, and hard to
+            navigate—especially for students with little or no research experience.
+        </p>
+        <ul>
+            <li><strong>Unclear starting points</strong> – A single “Get Started” entry point did not reflect the
+                different goals of new, returning, and advanced student researchers.</li>
+            <li><strong>Hidden information</strong> – Key resources like OURConnect, staff contact info, and funding
+                details were buried in dropdowns or external links.</li>
+            <li><strong>Inconsistent project details</strong> – Opportunities were listed, but content and structure
+                varied, making it hard to compare options or understand requirements.</li>
+            <li><strong>Underused support resources</strong> – Students expected guides, FAQs, and step-by-step help,
+                but struggled to find them in the current layout.</li>
+        </ul>
+        <p class="highlight-box">
+            Students weren’t just missing information—they were missing <strong>orientation</strong>. The website
+            needed to act as a guide through the research journey, not just a collection of links.
+        </p>
+    </section>
+
+    <div class="section-divider">
+        <span>Research</span>
+    </div>
+
+    <section class="content-section">
+        <h2>Understanding the Current Experience</h2>
+        <h3>User & Stakeholder Interviews</h3>
+        <p>
+            We interviewed <strong>11 undergraduate</strong> and <strong>3 graduate</strong> students who had engaged
+            with research at Purdue. Graduate students helped us understand the broader research process and reflect on
+            their own undergraduate journeys.
+        </p>
+        <ul>
+            <li>Students appreciated that OUR listed many research topics and departments, but felt overwhelmed by
+                scattered information.</li>
+            <li>External documents and long pages slowed them down; they preferred <strong>short, scannable navigation</strong>
+                with clear labels.</li>
+            <li>Faculty contact info and research opportunities were often <strong>hidden in dropdowns or external portals</strong>,
+                making discovery feel like trial and error.</li>
+            <li>Students expected supplemental resources (guides, FAQ, examples) that explained how to apply, present,
+                and stay involved in research.</li>
+        </ul>
+
+        <h3>Comparative Analysis</h3>
+        <p>
+            To avoid re‑inventing the wheel, we benchmarked Purdue OUR against peer institutions in the Big Ten and
+            beyond, including Northwestern, UCLA, Washington, and others.
+        </p>
+        <ul>
+            <li><strong>Minimalist layouts</strong> made opportunities easier to scan and reduced cognitive load.</li>
+            <li>Clear <strong>“start here” entry points</strong> differentiated audiences (new researchers, returning
+                students, faculty).</li>
+            <li>Well-structured opportunity catalogs surfaced filters (topic, time commitment, department) up front.</li>
+            <li>Dedicated <strong>FAQ and resource hubs</strong> were easy to find and broken into digestible sections.</li>
+        </ul>
+
+        <h3>Current State Testing</h3>
+        <p>
+            We ran <strong>current state tests</strong> with 10 undergraduates using the existing Purdue OUR website,
+            asking them to complete tasks derived from the print pathway while thinking aloud.
+        </p>
+        <ul>
+            <li>Students entered the site with <strong>different goals</strong> (finding a mentor, funding, conferences),
+                but were all funneled into the same “Get Started” path.</li>
+            <li>Inconsistent project descriptions created confusion about eligibility, expectations, and next steps.</li>
+            <li>OURConnect, a powerful search tool, was <strong>hard to discover</strong> and rarely the first place
+                students clicked.</li>
+        </ul>
+    </section>
+
+    <div class="section-divider">
+        <span>Key Insights</span>
+    </div>
+
+    <section class="content-section">
+        <h2>What We Learned</h2>
+        <ul>
+            <li><strong>Different students need different starting points.</strong> A first-year student “just curious”
+                about research should not see the same entry flow as a student ready to apply for a conference.</li>
+            <li><strong>Linear pathways don’t map well to web behavior.</strong> The print infographic implied a
+                straight line; in reality, students jump in and out at multiple stages.</li>
+            <li><strong>Orientation and feedback matter as much as content.</strong> Students wanted confirmation that
+                they were “on the right track” and weren’t missing hidden steps.</li>
+            <li><strong>OUR’s unique tools were under-leveraged.</strong> Features like OURConnect and staff support
+                only worked if the site clearly surfaced when and why to use them.</li>
+        </ul>
+        <p class="highlight-box">
+            Our design challenge became: <strong>how might we turn a static pathway into a flexible,
+            multi‑entry web experience that still feels guided and reassuring?</strong>
+        </p>
+    </section>
+
+    <div class="section-divider">
+        <span>User Flows</span>
+    </div>
+
+    <section class="content-section">
+        <h2>From Linear Pathway to Flexible Flows</h2>
+        <p>
+            To translate the printed pathway into something students could actually use, we first separated
+            <strong>purpose</strong> from <strong>presentation</strong>. The pathway’s steps remained our backbone, but
+            we redesigned how students could enter, exit, and loop through them.
+        </p>
+        <h3>Multiple Starting Points</h3>
+        <p>
+            The user flow team designed a system where students could begin from four primary intents:
+        </p>
+        <ul>
+            <li><strong>“I want to find a research opportunity.”</strong></li>
+            <li><strong>“I want to learn what research is.”</strong></li>
+            <li><strong>“I need funding or scholarships.”</strong></li>
+            <li><strong>“I’m preparing to present or attend a conference.”</strong></li>
+        </ul>
+        <p>
+            Each path routes students to the most relevant tools—like OURConnect, “Getting Started” content, or
+            conference resources—without forcing them through irrelevant steps.
+        </p>
+
+        <h3>Functionality Mapped to Goals</h3>
+        <p>
+            We anchored the flow around when students should use OUR-specific tools:
+        </p>
+        <ul>
+            <li><strong>OURConnect</strong> appears when students are ready to browse or filter concrete opportunities.</li>
+            <li><strong>Help & FAQ</strong> supports students who are unsure which step they’re on.</li>
+            <li><strong>Staff and appointment pathways</strong> are surfaced when human guidance is most valuable.</li>
+        </ul>
+    </section>
+
+    <section class="content-section">
+        <h2>Sketching the Experience</h2>
+        <p>
+            The prototype team interpreted the user flow into <strong>low-fidelity screen sketches</strong> across the
+            core areas of the site: homepage, search, conferences, scholarships & grants, staff, and FAQ/help.
+        </p>
+        <ul>
+            <li><strong>Homepage</strong> – 3–4 prominent buttons became “starting points” that mirror the new flow,
+                plus a clear entry into OURConnect.</li>
+            <li><strong>Search Opportunities</strong> – A filterable catalog centered on students’ mental models:
+                topic, time commitment, department, and eligibility.</li>
+            <li><strong>Conferences</strong> – A calendar/grid layout surfaced dates, deadlines, and participation
+                options at a glance.</li>
+            <li><strong>Scholarships & Grants</strong> – Dense text was broken into scannable cards explaining
+                differences between funding types.</li>
+            <li><strong>OUR Staff</strong> – Direct contact and appointment options reduced friction for students
+                seeking one-on-one guidance.</li>
+            <li><strong>FAQ & Help</strong> – Consolidated common questions to reduce unnecessary page-hopping and
+                scrolling.</li>
+        </ul>
+        <p>
+            We validated these sketches with <strong>5 undergraduates</strong> and <strong>1 graduate student</strong>
+            to confirm whether layout and labels matched their expectations.
+        </p>
+    </section>
+
+    <div class="section-divider">
+        <span>Prototyping</span>
+    </div>
+
+    <section class="content-section">
+        <h2>Low-Fidelity Prototype & Testing</h2>
+        <p>
+            Using our validated sketches, we built an <strong>interactive low-fidelity prototype</strong> that followed
+            the new user flow from entry point to opportunity discovery.
+        </p>
+        <p>
+            We then asked <strong>5 undergraduate students</strong> with little to no research experience to complete
+            tasks that mirrored the printed pathway, such as:
+        </p>
+        <ul>
+            <li>Find a research opportunity aligned with your interests.</li>
+            <li>Locate information on conferences and how to attend.</li>
+            <li>Figure out what to do if you’re completely new to research.</li>
+        </ul>
+        <p>
+            Students reported that the new prototype was <strong>clearer and easier to navigate</strong> than the
+            current OUR website. They especially appreciated seeing their next step and having multiple ways to get help.
+        </p>
+
+        <h3>Iterating on Help & Guidance</h3>
+        <p>
+            Testing also revealed gaps:
+        </p>
+        <ul>
+            <li>Students wanted a dedicated <strong>“Getting Started” page</strong> that walked through the research
+                process in plain language.</li>
+            <li>Conference pages needed clearer explanations of <strong>applying vs. attending</strong> and what each
+                required.</li>
+            <li>Help content was too hidden in the navigation; students wanted support surfaced alongside primary tasks.</li>
+        </ul>
+    </section>
+
+    <section class="content-section">
+        <h2>Mid-Fidelity Refinement</h2>
+        <p>
+            We incorporated feedback into a <strong>mid-fidelity prototype</strong> aligned with Purdue’s branding:
+        </p>
+        <ul>
+            <li>Added a <strong>“Getting Started” page</strong> with step-by-step visual guidance for new researchers.</li>
+            <li>Reworked the <strong>Spring Conference page</strong> to support both presenters and attendees, with
+                dates and deadlines called out visually.</li>
+            <li>Clarified copy and structure across funding, opportunities, and help pages.</li>
+        </ul>
+        <p>
+            Additional usability testing showed that the revised flow felt <strong>intuitive and stable</strong>; no
+            major structural changes were requested, which allowed us to focus on content clarity and interaction polish
+            in the high-fidelity prototype.
+        </p>
+    </section>
+
+    <div class="section-divider">
+        <span>Impact</span>
+    </div>
+
+    <section class="content-section">
+        <h2>Final Prototype & Annotated Flow</h2>
+        <p>
+            The final high-fidelity prototype combined our research insights, user flows, and branding constraints into
+            a cohesive student-centered experience. Key improvements included:
+        </p>
+        <ul>
+            <li><strong>Guided entry points</strong> that align with different student intentions.</li>
+            <li><strong>Clear opportunity discovery</strong> through filters, structured listings, and consistent
+                project information.</li>
+            <li><strong>Accessible support</strong> via surfaced help content, “Getting Started” guidance, and staff access.</li>
+            <li><strong>Conference and funding clarity</strong> with streamlined paths for both new and experienced researchers.</li>
+        </ul>
+        <p>
+            We delivered an <strong>annotated user flow</strong> alongside the prototype, documenting the rationale
+            behind each decision and how it ties back to user research, current-state testing, and stakeholder goals.
+        </p>
+    </section>
+
+    <div class="section-divider">
+        <span>Tools & Methods</span>
+    </div>
+
+    <section class="content-section">
+        <h2>Process & Collaboration</h2>
+        <h3>Research Methods</h3>
+        <ul>
+            <li>Literature review on undergraduate research engagement and support models.</li>
+            <li>Comparative analysis of 8 peer institution research sites.</li>
+            <li>User interviews with 11 undergraduates and 3 graduate students.</li>
+            <li>Current-state usability testing on the existing Purdue OUR website.</li>
+            <li>Affinity diagramming and synthesis of pain points and expectations.</li>
+        </ul>
+
+        <h3>Design Methods</h3>
+        <ul>
+            <li>End-to-end user flow mapping from multiple starting points.</li>
+            <li>Sketching workshops and iterative wireframing.</li>
+            <li>Concept validation with students and sponsor feedback sessions.</li>
+            <li>Low- and mid-fidelity prototyping in Figma.</li>
+            <li>Usability testing across multiple rounds.</li>
+        </ul>
+
+        <h3>Tools</h3>
+        <ul>
+            <li>FigJam · Figma · Miro</li>
+            <li>Google Docs for documentation and protocols</li>
+            <li>Purdue branding guidelines for visual alignment</li>
+        </ul>
+    </section>
+
+    <section class="content-section">
+        <h2>Reflection</h2>
+        <p class="highlight-box">
+            This project reinforced that <strong>pathways are lived, not just diagrammed</strong>. A beautiful
+            infographic can break down the process on paper, but if the website doesn’t reflect how students actually
+            move, they will still feel lost.
+        </p>
+        <ul>
+            <li><strong>Multiple entry points are essential.</strong> Students at different stages of experience and
+                confidence need tailored on-ramps into the same ecosystem.</li>
+            <li><strong>Research-to-design traceability matters.</strong> Our annotated flow helped stakeholders see
+                exactly how each interaction was grounded in user evidence.</li>
+            <li><strong>Support is part of the product.</strong> Surfacing help, staff, and “what to do next” is as
+                important as listing opportunities.</li>
+        </ul>
+    </section>
+</div>
+
+<div class="project-nav">
+    <a href="project-moore.html" class="nav-btn prev">Previous Project</a>
+    <a href="project-chekhov.html" class="nav-btn next">Next Project</a>
+</div>
+
+<footer>
+    <p>&copy; 2025 Simon An. Designed & Developed with purpose.</p>
+</footer>
+
+</body>
+</html>
+
