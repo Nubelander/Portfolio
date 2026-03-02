@@ -364,10 +364,6 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.image-grid.large .image-placeholder {
-    aspect-ratio: 16 / 10;
-}
-
 .image-grid.three {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -405,7 +401,6 @@ nav {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    aspect-ratio: 16 / 10;
     transition: all 0.3s var(--transition);
 }
 
