@@ -20,6 +20,22 @@
 <div class="project-hero">
     <div class="project-number">UX Research • Experience Studio</div>
     <h1 class="project-title">Purdue OUR Website Pathway</h1>
+
+    <section class="image-section">
+        <div class="image-label">Interactive Prototype Walkthrough</div>
+        <div class="video-container">
+            <div class="video-placeholder">
+                <video src="../assets/works/our/our.mp4" title="Purdue OUR Web Pathway Prototype" controls></video>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://www.figma.com" target="_blank" class="prototype-btn">
+                <span>View Interactive Prototype</span>
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
     <p class="project-subtitle">
         Bridging the gap between a printed undergraduate research pathway and a usable, student-centered web experience.
     </p>
@@ -53,23 +69,6 @@
 </div>
 
 <div class="project-content">
-
-    <section class="content-section">
-        <div class="image-section">
-            <div class="image-label">Interactive Prototype Walkthrough</div>
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <video src="../assets/works/our/our-prototype.mp4" title="Purdue OUR Web Pathway Prototype" controls></video>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://www.figma.com" target="_blank" class="prototype-btn">
-                    <span>View Interactive Prototype</span>
-                    <span>→</span>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <section class="content-section">
         <h2>Context</h2>
@@ -112,33 +111,43 @@
             interaction design, content strategy, and visual design.
         </p>
         <p>
-            Within the team, I focused on <strong>research synthesis, user flow design, and documentation</strong>:
+            Within the team, I focused on <strong>research synthesis, interactive prototyping, and documentation</strong>:
         </p>
         <ul>
             <li>Helped shape interview protocols and current-state tasks based on the printed pathway.</li>
             <li>Co-led synthesis activities like affinity diagramming and insight clustering.</li>
-            <li>Mapped multi-entry user flows that fed directly into our low- and mid-fidelity prototypes.</li>
-            <li>Contributed to the <strong>design documentation and annotated user flow</strong> delivered back to OUR.</li>
+            <li>Led the interactive prototype workstream from low-fidelity through high-fidelity, translating team-defined flows into concrete interactions.</li>
+            <li>Contributed to the <strong>design documentation and annotated user flow</strong> by capturing how interaction patterns support the broader pathway strategy.</li>
         </ul>
     </section>
 
     <section class="content-section">
         <h2>The Problem</h2>
-        <p>
-            Students knew that Purdue OUR existed, but the digital experience made it difficult to act on that
-            awareness. The pathway looked clear on paper, yet the website felt scattered, text-heavy, and hard to
-            navigate—especially for students with little or no research experience.
-        </p>
-        <ul>
-            <li><strong>Unclear starting points</strong> – A single “Get Started” entry point did not reflect the
-                different goals of new, returning, and advanced student researchers.</li>
-            <li><strong>Hidden information</strong> – Key resources like OURConnect, staff contact info, and funding
-                details were buried in dropdowns or external links.</li>
-            <li><strong>Inconsistent project details</strong> – Opportunities were listed, but content and structure
-                varied, making it hard to compare options or understand requirements.</li>
-            <li><strong>Underused support resources</strong> – Students expected guides, FAQs, and step-by-step help,
-                but struggled to find them in the current layout.</li>
-        </ul>
+        <div class="problem-layout">
+            <div class="problem-text">
+                <p>
+                    Students knew that Purdue OUR existed, but the digital experience made it difficult to act on that
+                    awareness. The pathway looked clear on paper, yet the website felt scattered, text-heavy, and hard to
+                    navigate—especially for students with little or no research experience.
+                </p>
+                <ul>
+                    <li><strong>Unclear starting points</strong> – A single “Get Started” entry point did not reflect the
+                        different goals of new, returning, and advanced student researchers.</li>
+                    <li><strong>Hidden information</strong> – Key resources like OURConnect, staff contact info, and funding
+                        details were buried in dropdowns or external links.</li>
+                    <li><strong>Inconsistent project details</strong> – Opportunities were listed, but content and structure
+                        varied, making it hard to compare options or understand requirements.</li>
+                    <li><strong>Underused support resources</strong> – Students expected guides, FAQs, and step-by-step help,
+                        but struggled to find them in the current layout.</li>
+                </ul>
+            </div>
+            <div class="problem-visual">
+                <div class="image-placeholder">
+                    <img src="../assets/works/our/pathway.png" alt="Undergraduate research pathway infographic">
+                </div>
+                <p class="image-subtitle">The existing undergraduate research pathway infographic that students struggled to translate into web actions.</p>
+            </div>
+        </div>
         <p class="highlight-box">
             Students weren’t just missing information—they were missing <strong>orientation</strong>. The website
             needed to act as a guide through the research journey, not just a collection of links.
@@ -168,16 +177,16 @@
                 and stay involved in research.</li>
         </ul>
 
-        <div class="image-grid">
+        <div class="image-grid two">
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/pathway-print.png" alt="Undergraduate research pathway infographic">
+                    <img src="../assets/works/our/Insight.png" alt="Interview insights from user and stakeholder sessions">
                 </div>
-                <figcaption class="image-subtitle">Purdue OUR's comprehensive printed undergraduate research pathway.</figcaption>
+                <figcaption class="image-subtitle">Interview insights synthesized across undergraduates and graduate stakeholders.</figcaption>
             </figure>
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/current-site.png" alt="Screenshot of existing Purdue OUR website">
+                    <img src="../assets/works/our/current.png" alt="Screenshot of existing Purdue OUR website">
                 </div>
                 <figcaption class="image-subtitle">Current OUR website used in our current state tests.</figcaption>
             </figure>
@@ -196,6 +205,15 @@
             <li>Dedicated <strong>FAQ and resource hubs</strong> were easy to find and broken into digestible sections.</li>
         </ul>
 
+        <div class="image-grid single">
+            <figure class="image-figure">
+                <div class="image-placeholder">
+                    <img src="../assets/works/our/comp.png" alt="Peer institution research site layout">
+                </div>
+                <figcaption class="image-subtitle">Benchmarking peer research sites to identify clearer entry points and layouts.</figcaption>
+            </figure>
+        </div>
+
         <h3>Current State Testing</h3>
         <p>
             We ran <strong>current state tests</strong> with 10 undergraduates using the existing Purdue OUR website,
@@ -208,6 +226,21 @@
             <li>OURConnect, a powerful search tool, was <strong>hard to discover</strong> and rarely the first place
                 students clicked.</li>
         </ul>
+
+        <div class="image-grid two">
+            <figure class="image-figure">
+                <div class="image-placeholder">
+                    <img src="../assets/works/our/test.png" alt="Student completing current state testing tasks">
+                </div>
+                <figcaption class="image-subtitle">Observing how students navigate the existing OUR website during current state tests.</figcaption>
+            </figure>
+            <figure class="image-figure"> 
+                <div class="image-placeholder">
+                    <img src="../assets/works/our/Insight.png" alt="Notes from current state testing">
+                </div>
+                <figcaption class="image-subtitle">Documenting pain points and expectations surfaced during current state testing.</figcaption>
+            </figure>
+        </div>
     </section>
 
     <div class="section-divider">
@@ -230,43 +263,6 @@
             Our design challenge became: <strong>how might we turn a static pathway into a flexible,
             multi‑entry web experience that still feels guided and reassuring?</strong>
         </p>
-    </section>
-
-    <div class="section-divider">
-        <span>User Flows</span>
-    </div>
-
-    <section class="content-section">
-        <h2>From Linear Pathway to Flexible Flows</h2>
-        <p>
-            To translate the printed pathway into something students could actually use, we first separated
-            <strong>purpose</strong> from <strong>presentation</strong>. The pathway’s steps remained our backbone, but
-            we redesigned how students could enter, exit, and loop through them.
-        </p>
-        <h3>Multiple Starting Points</h3>
-        <p>
-            The user flow team designed a system where students could begin from four primary intents:
-        </p>
-        <ul>
-            <li><strong>“I want to find a research opportunity.”</strong></li>
-            <li><strong>“I want to learn what research is.”</strong></li>
-            <li><strong>“I need funding or scholarships.”</strong></li>
-            <li><strong>“I’m preparing to present or attend a conference.”</strong></li>
-        </ul>
-        <p>
-            Each path routes students to the most relevant tools—like OURConnect, “Getting Started” content, or
-            conference resources—without forcing them through irrelevant steps.
-        </p>
-
-        <h3>Functionality Mapped to Goals</h3>
-        <p>
-            We anchored the flow around when students should use OUR-specific tools:
-        </p>
-        <ul>
-            <li><strong>OURConnect</strong> appears when students are ready to browse or filter concrete opportunities.</li>
-            <li><strong>Help & FAQ</strong> supports students who are unsure which step they’re on.</li>
-            <li><strong>Staff and appointment pathways</strong> are surfaced when human guidance is most valuable.</li>
-        </ul>
     </section>
 
     <section class="content-section">
@@ -294,18 +290,12 @@
             to confirm whether layout and labels matched their expectations.
         </p>
 
-        <div class="image-grid">
+        <div class="image-grid single">
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/homepage-sketches.png" alt="Homepage sketch concepts">
+                    <img src="../assets/works/our/sketches.png" alt="Homepage sketch concepts">
                 </div>
                 <figcaption class="image-subtitle">Homepage sketch exploration for multiple student starting points.</figcaption>
-            </figure>
-            <figure class="image-figure">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/user-flow.png" alt="User flow diagram for Purdue OUR pathway">
-                </div>
-                <figcaption class="image-subtitle">Early user flow mapping from the print pathway to the web experience.</figcaption>
             </figure>
         </div>
     </section>
@@ -334,16 +324,16 @@
             current OUR website. They especially appreciated seeing their next step and having multiple ways to get help.
         </p>
 
-        <div class="image-grid">
+        <div class="image-grid two large">
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/lofi-home.png" alt="Low-fidelity homepage prototype">
+                    <img src="../assets/works/our/lofi home.png" alt="Low-fidelity homepage prototype">
                 </div>
                 <figcaption class="image-subtitle">Low-fidelity homepage prototype aligned to our multi-entry user flow.</figcaption>
             </figure>
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/lofi-search.png" alt="Low-fidelity search opportunities screen">
+                    <img src="../assets/works/our/lofi opp.png" alt="Low-fidelity search opportunities screen">
                 </div>
                 <figcaption class="image-subtitle">Search opportunities screen emphasizing filters and OURConnect.</figcaption>
             </figure>
@@ -379,16 +369,16 @@
             in the high-fidelity prototype.
         </p>
 
-        <div class="image-grid">
+        <div class="image-grid two">
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/midfi-getting-started.png" alt="Mid-fidelity getting started page">
+                    <img src="../assets/works/our/midfi start.png" alt="Mid-fidelity getting started page">
                 </div>
                 <figcaption class="image-subtitle">Mid-fidelity “Getting Started” page explaining the research pathway step by step.</figcaption>
             </figure>
             <figure class="image-figure">
                 <div class="image-placeholder">
-                    <img src="../assets/works/our/midfi-conference.png" alt="Mid-fidelity conference page">
+                    <img src="../assets/works/our/conf.png" alt="Mid-fidelity conference page">
                 </div>
                 <figcaption class="image-subtitle">Conference page clarifying deadlines and differences between attending and presenting.</figcaption>
             </figure>
@@ -417,7 +407,7 @@
             behind each decision and how it ties back to user research, current-state testing, and stakeholder goals.
         </p>
 
-        <div class="image-grid">
+        <div class="image-grid two">
             <figure class="image-figure">
                 <div class="image-placeholder">
                     <img src="../assets/works/our/hifi-home.png" alt="High-fidelity homepage design">
@@ -433,54 +423,6 @@
         </div>
     </section>
 
-    <section class="content-section">
-        <h2>Research Artifacts & Visuals</h2>
-        <p>
-            A few selected artifacts from our process that shaped the final pathway:
-        </p>
-
-        <div class="image-grid three">
-            <figure class="image-figure">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/affinity-map.png" alt="Affinity diagram from interviews">
-                </div>
-                <figcaption class="image-subtitle">Affinity map synthesizing 10+ student interviews and current state tests.</figcaption>
-            </figure>
-            <figure class="image-figure">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/flow-closeup.png" alt="Close-up of user flow nodes">
-                </div>
-                <figcaption class="image-subtitle">Close-up on key decision points in the multi-entry user flow.</figcaption>
-            </figure>
-            <figure class="image-figure">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/testing-notes.png" alt="Usability testing notes">
-                </div>
-                <figcaption class="image-subtitle">Usability testing notes mapped to design changes across iterations.</figcaption>
-            </figure>
-        </div>
-
-        <div class="image-strip">
-            <div class="image-strip-item">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/help-page.png" alt="Help & FAQ screen">
-                </div>
-                <div class="image-subtitle">Help & FAQ layout used to consolidate scattered information.</div>
-            </div>
-            <div class="image-strip-item">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/staff-page.png" alt="OUR staff page">
-                </div>
-                <div class="image-subtitle">Staff page emphasizing contact paths and appointment scheduling.</div>
-            </div>
-            <div class="image-strip-item">
-                <div class="image-placeholder">
-                    <img src="../assets/works/our/funding-cards.png" alt="Funding cards layout">
-                </div>
-                <div class="image-subtitle">Funding card layout clarifying scholarships versus grants.</div>
-            </div>
-        </div>
-    </section>
 
     <div class="section-divider">
         <span>Tools & Methods</span>
